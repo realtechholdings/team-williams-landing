@@ -380,10 +380,12 @@ nav{transition:padding .3s ease,box-shadow .3s ease;}
 }
 
 /*  FLOATING CALL BUTTON  */
-.float-cta{display:none;position:fixed;bottom:24px;right:24px;z-index:300;background:var(--gold);color:var(--navy);border-radius:50px;padding:14px 22px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 28px rgba(201,168,76,0.5);align-items:center;gap:8px;letter-spacing:.03em;transition:all .3s ease;animation:floatPulse 3s ease-in-out infinite;}
+.float-cta,.float-whatsapp{display:none;position:fixed;bottom:24px;z-index:300;background:var(--gold);color:var(--navy);border-radius:50px;padding:14px 22px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 28px rgba(201,168,76,0.5);align-items:center;gap:8px;letter-spacing:.03em;transition:all .3s ease;animation:floatPulse 3s ease-in-out infinite;}
+.float-cta{right:24px;}
+.float-whatsapp{right:130px;background:#25D366;color:#fff;}
 @keyframes floatPulse{0%,100%{box-shadow:0 8px 28px rgba(201,168,76,0.5);}50%{box-shadow:0 12px 40px rgba(201,168,76,0.75);}}
-.float-cta:hover{background:var(--gold-light);transform:translateY(-3px);}
-@media(max-width:960px){.float-cta{display:flex;}}
+.float-cta:hover,.float-whatsapp:hover{transform:translateY(-3px);}
+@media(max-width:960px){.float-cta,.float-whatsapp{display:flex;}}
 
 /*  BACK TO TOP  */
 #back-top{position:fixed;bottom:24px;left:24px;z-index:300;background:rgba(13,27,42,0.85);color:var(--gold);border:1px solid rgba(201,168,76,0.3);border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;opacity:0;pointer-events:none;transition:all .3s ease;backdrop-filter:blur(8px);}
@@ -420,6 +422,9 @@ nav{transition:padding .3s ease,box-shadow .3s ease;}
 
 <!-- FLOATING CALL BUTTON (mobile) -->
 <a href="tel:0408751002" class="float-cta"> Call Ben</a>
+
+<!-- FLOATING WHATSAPP BUTTON (mobile) -->
+<a href="https://wa.me/61408751002" class="float-whatsapp" target="_blank" rel="noopener"> WhatsApp</a>
 
 <!-- BACK TO TOP -->
 <a href="#" id="back-top" aria-label="Back to top">↑</a>
