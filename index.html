@@ -3,854 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Williams RE/MAX Regency Gold Coast</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Team Williams RE/MAX Regency | Gold Coast Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #1a365d;
-            --secondary: #c9a227;
-            --accent: #2d5a27;
-            --light: #f8f9fa;
-            --dark: #1a1a2e;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo img {
-            height: 50px;
-        }
-        
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .logo-text span {
-            color: var(--secondary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--secondary);
-        }
-        
-        .cta-btn {
-            background: var(--secondary);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(201, 162, 39, 0.4);
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.7)), 
-                        url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 120px 5% 80px;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            color: var(--secondary);
-        }
-        
-        .tagline {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: #e0e0e0;
-        }
-        
-        .tagline strong {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .hero-btn {
-            padding: 1rem 2.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-        
-        .hero-btn-primary {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        .hero-btn-primary:hover {
-            background: #b8922a;
-            transform: translateY(-2px);
-        }
-        
-        .hero-btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .hero-btn-secondary:hover {
-            background: white;
-            color: var(--primary);
-        }
-        
-        /* Contact Bar */
-        .contact-bar {
-            background: var(--primary);
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-item i {
-            color: var(--secondary);
-        }
-        
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            color: var(--secondary);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 5%;
-            background: white;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .about-card {
-            background: var(--light);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .about-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .about-card i {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .about-card p {
-            color: #666;
-        }
-        
-        /* Team Section */
-        .team {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, var(--primary) 0%, #2a4a7d 100%);
-        }
-        
-        .team .section-header h2,
-        .team .section-header p {
-            color: white;
-        }
-        
-        .team .section-header p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .team-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .team-image {
-            height: 300px;
-            background: linear-gradient(135deg, #ddd 0%, #eee 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .team-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .team-image-placeholder {
-            text-align: center;
-            color: #999;
-        }
-        
-        .team-image-placeholder i {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .team-info {
-            padding: 30px;
-        }
-        
-        .team-info h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-role {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .team-bio {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .team-contact {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .team-contact a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .team-contact a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Stats Section */
-        .stats {
-            padding: 80px 5%;
-            background: var(--secondary);
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-            color: white;
-        }
-        
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 5%;
-            background: var(--light);
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-        
-        .testimonial-text {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .testimonial-name {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .testimonial-location {
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 100px 5%;
-            background: white;
-        }
-        
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .contact-info h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-details {
-            margin-bottom: 2rem;
-        }
-        
-        .contact-row {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-row i {
-            width: 50px;
-            height: 50px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        .contact-row div {
-            flex: 1;
-        }
-        
-        .contact-row strong {
-            display: block;
-            color: var(--primary);
-            margin-bottom: 2px;
-        }
-        
-        .contact-row a {
-            color: #666;
-            text-decoration: none;
-        }
-        
-        .contact-row a:hover {
-            color: var(--secondary);
-        }
-        
-        .contact-form {
-            background: var(--light);
-            padding: 40px;
-            border-radius: 20px;
-        }
-        
-        .contact-form h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--dark);
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #b8922a;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 5% 20px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-        
-        .footer-section p {
-            color: #aaa;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-section a {
-            color: #aaa;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.8rem;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: var(--secondary);
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .footer-social a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-        
-        .footer-social a:hover {
-            background: var(--secondary);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #666;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-bar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <div class="logo-text">Team <span>Williams</span></div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="remax-logo">RE/MAX</span>
+                <span class="team-name">Team Williams</span>
+            </div>
+            <nav class="nav">
+                <a href="#properties">Properties</a>
+                <a href="#about">About</a>
+                <a href="#team">Our Team</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="#contact" class="cta-btn">Get in Touch</a>
-        <div class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Ben & Andrea <span>Williams</span></h1>
-            <p class="tagline">
-                <strong>"Highest Price for the Lowest Cost"</strong> | <strong>"Call the number the buyers call"</strong>
-            </p>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-                Licensed Real Estate Agents — RE/MAX Regency Gold Coast
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="hero-btn hero-btn-primary">
-                    <i class="fas fa-phone"></i> Call 0435 780 117
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">Gold Coast Real Estate Experts</div>
+            <h1>Ben Williams <span class="partner-name">&amp; Andrea Williams</span></h1>
+            <p class="hero-title">Licensed Real Estate Agent — RE/MAX Regency Gold Coast</p>
+            <div class="hero-taglines">
+                <span class="tagline">"Highest Price for the Lowest Cost"</span>
+                <span class="tagline-divider">|</span>
+                <span class="tagline">"Call the number the buyers call"</span>
+            </div>
+            <div class="hero-contact">
+                <a href="tel:0435780117" class="contact-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    0435 780 117
                 </a>
-                <a href="#contact" class="hero-btn hero-btn-secondary">
-                    <i class="fas fa-envelope"></i> Email Us
-                </a>
+            </div>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary btn-large">Get a Free Appraisal</a>
+                <a href="#properties" class="btn btn-outline">View Properties</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Properties Sold</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">$200M+</span>
+                <span class="stat-label">In Sales</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years Experience</span>
             </div>
         </div>
     </section>
 
-    <!-- Contact Bar -->
-    <div class="contact-bar">
-        <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <a href="tel:0435780117">0435 780 117</a>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:ben.williams@regency.com.au">ben.williams@regancy.com.au</a>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Gold Coast, Queensland</span>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-header">
-            <h2>Why Choose Team Williams?</h2>
-            <p>Expert real estate services on the Gold Coast with a commitment to getting you the highest price for the lowest cost.</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-card">
-                <i class="fas fa-trophy"></i>
-                <h3>Top Results</h3>
-                <p>Proven track record of achieving exceptional prices for our clients across the Gold Coast.</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-percentage"></i>
-                <h3>Lowest Fees</h3>
-                <p>Competitive commission rates without compromising on quality service or marketing.</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h3>Buyer's Choice</h3>
-                <p>"Call the number the buyers call" — we attract more qualified buyers to your property.</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-home"></i>
-                <h3>Local Experts</h3>
-                <p>In-depth knowledge of the Gold Coast real estate market and neighbourhood trends.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <div class="stats">
-        <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Properties Sold</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">$200M+</div>
-            <div class="stat-label">In Sales</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Client Satisfaction</div>
-        </div>
-    </div>
-
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <div class="section-header">
-            <h2>Meet Team Williams</h2>
-            <p>Your trusted real estate partners on the Gold Coast</p>
-        </div>
-        <div class="team-grid">
-            <!-- Ben Williams -->
-            <div class="team-card">
-                <div class="team-image">
-                    <div class="team-image-placeholder">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="team-info">
-                    <h3>Ben Williams</h3>
-                    <div class="team-role">Licensed Real Estate Agent</div>
-                    <p class="team-bio">Leading the team with over 15 years of experience in Gold Coast real estate. Ben's expertise in negotiation and market analysis ensures maximum returns for every client.</p>
-                    <div class="team-contact">
-                        <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
-                        <a href="mailto:ben.williams@regency.com.au"><i class="fas fa-envelope"></i> Email</a>
-                    </div>
-                </div>
+    <!-- Properties Section -->
+    <section id="properties" class="properties-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Featured Listings</span>
+                <h2>Current Properties</h2>
+                <p>Explore our latest listings on the Gold Coast</p>
             </div>
             
-            <!-- Andrea Williams -->
-            <div class="team-card">
-                <div class="team-image">
-                    <div class="team-image-placeholder">
-                        <i class="fas fa-user"></i>
+            <div class="property-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="sale">For Sale</button>
+                <button class="filter-btn" data-filter="rent">For Rent</button>
+                <button class="filter-btn" data-filter="sold">Sold</button>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Property Card 1 -->
+                <div class="property-card" data-category="sale">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Modern family home">
+                        <span class="property-badge sale">For Sale</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Luxury Waterfront Estate</h3>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> 123 Pacific Parade, Broadbeach</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath"></i> 4 Baths</span>
+                            <span><i class="fas fa-car"></i> 3 Car</span>
+                            <span><i class="fas fa-ruler-combined"></i> 450m²</span>
+                        </div>
+                        <div class="property-price">$2,850,000</div>
+                        <a href="#" class="btn btn-outline btn-small">View Details</a>
                     </div>
                 </div>
-                <div class="team-info">
-                    <h3>Andrea Williams</h3>
-                    <div class="team-role">Licensed Real Estate Agent</div>
-                    <p class="team-bio">Working alongside Ben to provide comprehensive real estate services. Andrea brings exceptional client care and organizational skills to ensure smooth transactions.</p>
-                    <div class="team-contact">
-                        <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
-                        <a href="mailto:ben.williams@regency.com.au"><i class="fas fa-envelope"></i> Email</a>
+
+                <!-- Property Card 2 -->
+                <div class="property-card" data-category="sale">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Contemporary apartment">
+                        <span class="property-badge sale">For Sale</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Beachside Apartment</h3>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> 45/320 Marine Parade, Surfers Paradise</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-car"></i> 1 Car</span>
+                            <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+                        </div>
+                        <div class="property-price">$895,000</div>
+                        <a href="#" class="btn btn-outline btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card" data-category="rent">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Modern townhouse">
+                        <span class="property-badge rent">For Rent</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Modern Townhouse</h3>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> 78 Highland Avenue, Mermaid Beach</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2.5 Baths</span>
+                            <span><i class="fas fa-car"></i> 2 Car</span>
+                            <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+                        </div>
+                        <div class="property-price">$950/week</div>
+                        <a href="#" class="btn btn-outline btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="property-card" data-category="sold">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Family home">
+                        <span class="property-badge sold">Sold</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Renovated Family Home</h3>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> 15 Coral Street, Burleigh Heads</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-car"></i> 2 Car</span>
+                            <span><i class="fas fa-ruler-combined"></i> 320m²</span>
+                        </div>
+                        <div class="property-price">Sold $1,450,000</div>
+                        <a href="#" class="btn btn-outline btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="property-card" data-category="sale">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="Penthouse">
+                        <span class="property-badge sale">For Sale</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Luxury Penthouse</h3>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> PH1/1 Oracle Boulevard, Broadbeach</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-car"></i> 2 Car</span>
+                            <span><i class="fas fa-ruler-combined"></i> 280m²</span>
+                        </div>
+                        <div class="property-price">$3,200,000</div>
+                        <a href="#" class="btn btn-outline btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="property-card" data-category="sale">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80" alt="Villa">
+                        <span class="property-badge sale">For Sale</span>
+                    </div>
+                    <div class="property-details">
+                        <h3>Hamlet Style Villa</h3>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> 42 The Peninsula, Hope Island</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-car"></i> 2 Car</span>
+                            <span><i class="fas fa-ruler-combined"></i> 380m²</span>
+                        </div>
+                        <div class="property-price">$1,750,000</div>
+                        <a href="#" class="btn btn-outline btn-small">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="properties-cta">
+                <a href="#" class="btn btn-primary">View All Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-subtitle">About Us</span>
+                    <h2>Team Williams RE/MAX Regency</h2>
+                    <p class="about-lead">With over 15 years of experience on the Gold Coast, Ben and Andrea Williams have established themselves as trusted experts in real estate, consistently delivering outstanding results for their clients.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Proven Results</h4>
+                                <p>Over $200 million in total sales with a track record of achieving record prices for sellers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Maximum Value, Lowest Cost</h4>
+                                <p>Our commitment to getting you the highest price with competitive commission rates.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Extensive Buyer Network</h4>
+                                <p>"Call the number the buyers call" — we have a proven buyer database ready for your property.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Gold Coast Specialists</h4>
+                                <p>Deep local knowledge across all Gold Coast suburbs from Broadbeach to Hope Island.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Team Williams - Real Estate Professionals">
+                    <div class="about-image-overlay">
+                        <div class="overlay-stats">
+                            <span class="overlay-number">500+</span>
+                            <span class="overlay-label">Happy Clients</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="section-header">
-            <h2>What Our Clients Say</h2>
-            <p>Real results from real clients</p>
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Meet the Team</span>
+                <h2>Our Dedicated Professionals</h2>
+                <p>The experienced team behind your real estate success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card lead">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Ben Williams">
+                    </div>
+                    <div class="team-info">
+                        <h3>Ben Williams</h3>
+                        <p class="team-title">Licensed Real Estate Agent</p>
+                        <p class="team-bio">With over 15 years of experience in Gold Coast real estate, Ben has built a reputation for achieving exceptional results. His negotiation skills and market expertise have earned him numerous industry awards.</p>
+                        <div class="team-contact">
+                            <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
+                            <a href="mailto:ben@teamwilliams.com.au"><i class="fas fa-envelope"></i> ben@teamwilliams.com.au</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="./assets/andrea-profile.jpg" alt="Andrea Williams">
+                    </div>
+                    <div class="team-info">
+                        <h3>Andrea Williams</h3>
+                        <p class="team-title">Partner & Marketing Director</p>
+                        <p class="team-bio">Andrea brings a unique blend of marketing expertise and client relations. Her strategic approach to property marketing ensures maximum exposure for every listing.</p>
+                        <div class="team-contact">
+                            <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
+                            <a href="mailto:andrea@teamwilliams.com.au"><i class="fas fa-envelope"></i> andrea@teamwilliams.com.au</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Ben and Andrea were fantastic from start to finish. They got us $50,000 above our asking price! Their knowledge of the Gold Coast market is unmatched."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">JM</div>
-                    <div>
-                        <div class="testimonial-name">John & Mary Mitchell</div>
-                        <div class="testimonial-location">Surfers Paradise</div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Reviews</span>
+                <h2>What Our Clients Say</h2>
+                <p>Real results from real people</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Ben and Andrea made the selling process incredibly easy. They achieved $50,000 above our asking price within just 2 weeks! Their communication and professionalism were outstanding."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="John D.">
+                        <div class="author-info">
+                            <h4>John D.</h4>
+                            <span>Sold in Broadbeach</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The best real estate agents we've ever worked with. Professional, responsive, and truly cared about getting us the best result. Highly recommend!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">SP</div>
-                    <div>
-                        <div class="testimonial-name">Sarah & Peter Thompson</div>
-                        <div class="testimonial-location">Broadbeach</div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"We bought our first home with Team Williams and couldn't be happier. They guided us through every step and found us the perfect property within our budget."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah M.">
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <span>Purchased in Mermaid Beach</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"We were skeptical about the 'lowest cost' claim, but the service was excellent and we saved thousands in commission. Still got top dollar for our home!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">DK</div>
-                    <div>
-                        <div class="testimonial-name">David & Karen Lee</div>
-                        <div class="testimonial-location">Mermaid Beach</div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The best decision we made was choosing Team Williams. Their marketing was impressive and we had 45 groups through our first open home. Sold on day 1!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Michael R.">
+                        <div class="author-info">
+                            <h4>Michael R.</h4>
+                            <span>Sold in Surfers Paradise</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -858,159 +390,138 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-header">
-            <h2>Contact Team Williams</h2>
-            <p>Ready to sell or buy? Let's discuss your real estate goals</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <div class="contact-details">
-                    <div class="contact-row">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Phone (Call)</strong>
-                            <a href="tel:0435780117">0435 780 117</a>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2>Contact Team Williams</h2>
+                    <p>Ready to sell your property or find your dream home? Contact us today for a free, no-obligation appraisal.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Phone (Call)</h4>
+                                <a href="tel:0435780117">0435 780 117</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email</h4>
+                                <a href="mailto:info@teamwilliams.com.au">info@teamwilliams.com.au</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Office</h4>
+                                <p>RE/MAX Regency Gold Coast<br>Shop 1, 87-95 Surf Parade<br>Broadbeach, QLD 4218</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-row">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <a href="mailto:ben.williams@regency.com.au">ben.williams@regancy.com.au</a>
-                        </div>
-                    </div>
-                    <div class="contact-row">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Office</strong>
-                            <span>RE/MAX Regency Gold Coast</span>
-                        </div>
-                    </div>
-                    <div class="contact-row">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Service Area</strong>
-                            <span>All Gold Coast & Surrounding Areas</span>
+                    
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" placeholder="Your Phone Number">
-                    </div>
-                    <div class="form-group">
-                        <label>I'm interested in:</label>
-                        <select>
-                            <option>Selling my property</option>
-                            <option>Buying a property</option>
-                            <option>Property valuation</option>
-                            <option>Other inquiry</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea rows="4" placeholder="How can we help you?" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send Us a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm interested in</label>
+                            <select id="interest" name="interest">
+                                <option value="selling">Selling my property</option>
+                                <option value="buying">Buying a property</option>
+                                <option value="renting">Renting</option>
+                                <option value="appraisal">Free appraisal</option>
+                                <option value="other">Other inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Team Williams</h4>
-                <p>RE/MAX Regency Gold Coast</p>
-                <p>Licensed Real Estate Agents</p>
-                <p style="margin-top: 1rem; font-weight: 600; color: var(--secondary);">
-                    "Highest Price for the Lowest Cost"
-                </p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="#about">About Us</a>
-                <a href="#team">Our Team</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <a href="#contact">Property Sales</a>
-                <a href="#contact">Buyer's Agent</a>
-                <a href="#contact">Property Valuation</a>
-                <a href="#contact">Market Appraisals</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
-                <a href="mailto:ben.williams@regency.com.au"><i class="fas fa-envelope"></i> ben.williams@regancy.com.au</a>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="remax-logo">RE/MAX</span>
+                        <span class="team-name">Team Williams</span>
+                    </div>
+                    <p>Gold Coast's trusted real estate professionals. "Highest Price for the Lowest Cost" — Call the number the buyers call.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:0435780117">0435 780 117</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@teamwilliams.com.au">info@teamwilliams.com.au</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> RE/MAX Regency, Broadbeach</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-cta">
+                    <h4>Ready to Sell?</h4>
+                    <p>Get a free market appraisal today.</p>
+                    <a href="#contact" class="btn btn-primary">Book Appraisal</a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Team Williams RE/MAX Regency Gold Coast. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Team Williams RE/MAX Regency. All rights reserved.</p>
+                <p class="footer-disclaimer">Disclaimer: All information provided is general in nature and does not constitute professional advice.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navUl = document.querySelector('nav ul');
-        
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
-                navUl.style.flexDirection = 'column';
-                navUl.style.position = 'absolute';
-                navUl.style.top = '70px';
-                navUl.style.left = '0';
-                navUl.style.width = '100%';
-                navUl.style.background = 'white';
-                navUl.style.padding = '20px';
-                navUl.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-            });
-        }
-
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! Ben or Andrea will be in touch shortly.');
-            this.reset();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
