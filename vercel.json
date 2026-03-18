@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "**/*.{jpg,jpeg,png,gif,svg,ico}",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/ben-williams",
+      "status": 302,
+      "headers": {
+        "Location": "/ben-williams-landing.html"
+      }
+    },
+    {
+      "src": "/lander",
+      "status": 302,
+      "headers": {
+        "Location": "/ben-williams-landing.html"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
