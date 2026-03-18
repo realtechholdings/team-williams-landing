@@ -36,7 +36,7 @@ html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);-webkit-font-smoothing:antialiased;}
 
 /*  NAV  */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,0.97);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:10px 28px;border-bottom:1px solid rgba(201,168,76,0.22);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,0.97);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:10px 28px;}
 .nav-brand{display:flex;align-items:center;gap:10px;}
 .nav-logo-img{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(201,168,76,0.5);}
 .nav-name{font-family:'Playfair Display',serif;color:#fff;font-size:16px;}
@@ -50,10 +50,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,0.9
 @media(max-width:960px){.nav-links{display:none;}}
 
 /*  HERO  */
-.hero{min-height:100vh;background:linear-gradient(150deg,var(--dark-red) 0%,var(--navy-mid) 55%,#000e35 100%);display:flex;align-items:center;padding:96px 28px 60px;position:relative;overflow:hidden;}
+.hero{min-height:100vh;background:linear-gradient(150deg,var(--dark-red) 0%,var(--navy-mid) 55%,#000e35 100%);display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden;}
 .hero-glow{position:absolute;top:-15%;right:-5%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 65%);pointer-events:none;}
 .hero-fade{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--cream));pointer-events:none;}
-.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:center;}
+.hero-inner{width:100%;display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.35);padding:6px 14px;border-radius:2px;margin-bottom:18px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary-red);}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--primary-red);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
@@ -90,18 +90,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,42,0.9
 @media(max-width:1000px){.hero-inner{grid-template-columns:1fr;}.hero-card{max-width:440px;}}
 
 /*  AWARDS BAR  */
-.awards-bar{background:var(--dark-red);padding:18px 28px;border-bottom:1px solid rgba(201,168,76,0.15);}
+.awards-bar{background:var(--dark-red);padding:18px 28px;}
 .awards-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:28px;}
 .award-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;letter-spacing:.04em;}
 .award-icon{font-size:18px;}
 .award-divider{width:1px;height:24px;background:rgba(255,255,255,0.15);}
 
 /*  GENERAL LAYOUT  */
-section{padding:80px 28px;position:relative;}
+section{padding:100px 28px;position:relative;}
 /* section dividers removed for seamless look */
-.section-inner{max-width:1160px;margin:0 auto;}
+.section-inner{max-width:100%;margin:0 auto;}
 .section-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary-red);margin-bottom:10px;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);line-height:1.2;color:var(--dark-red);margin-bottom:14px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);line-height:1.15;color:var(--dark-red);margin-bottom:14px;letter-spacing:-0.02em;}
 .section-sub{font-size:16px;color:var(--text-mid);line-height:1.75;max-width:640px;margin-bottom:40px;}
 .gold-bar{width:48px;height:3px;background:var(--primary-red);margin-bottom:24px;border-radius:2px;}
 .gold-bar.center{margin-left:auto;margin-right:auto;}
