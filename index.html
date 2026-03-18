@@ -3,848 +3,666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Williams | RE/MAX Regency Gold Coast</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Team Williams RE/MAX Regency Gold Coast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --secondary: #666666;
-            --accent: #c9a962;
-            --accent-dark: #a88b4a;
-            --white: #ffffff;
-            --off-white: #fafafa;
-            --light-gray: #f5f5f5;
-            --border: #e5e5e5;
-            --shadow: 0 4px 24px rgba(0,0,0,0.06);
-            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--primary);
-            line-height: 1.6;
-            background: var(--white);
+        
+        :root {
+            --primary: #1a365d;
+            --secondary: #c9a227;
+            --accent: #2d5a27;
+            --light: #f8f9fa;
+            --dark: #1a1a2e;
         }
-
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            line-height: 1.2;
         }
-
+        
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            padding: 12px 0;
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--primary);
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .logo span {
-            color: var(--accent);
+        
+        .logo img {
+            height: 50px;
         }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--primary);
         }
-
-        .nav-cta {
-            background: var(--primary);
-            color: var(--white) !important;
-            padding: 12px 28px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+        
+        .logo-text span {
+            color: var(--secondary);
         }
-
-        .nav-cta:hover {
-            background: var(--accent);
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
-
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .cta-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201, 162, 39, 0.4);
+        }
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            padding: 120px 40px 80px;
-            background: var(--light-gray);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.7)), 
+                        url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920') center/cover;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 120px 5% 80px;
         }
-
+        
         .hero-content {
-            max-width: 600px;
+            max-width: 900px;
         }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--white);
-            color: var(--accent);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-        }
-
+        
         .hero h1 {
-            font-size: 64px;
-            margin-bottom: 24px;
-            color: var(--primary);
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
-
+        
         .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero-desc {
-            font-size: 18px;
             color: var(--secondary);
-            margin-bottom: 40px;
-            line-height: 1.8;
         }
-
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        
+        .tagline strong {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
         .hero-buttons {
             display: flex;
-            gap: 16px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
+            gap: 1rem;
             justify-content: center;
-            padding: 16px 32px;
-            font-size: 14px;
-            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        
+        .hero-btn {
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
         }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
+        
+        .hero-btn-primary {
+            background: var(--secondary);
+            color: white;
         }
-
-        .btn-primary:hover {
-            background: var(--accent);
+        
+        .hero-btn-primary:hover {
+            background: #b8922a;
             transform: translateY(-2px);
         }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary);
-            border: 1px solid var(--border);
+        
+        .hero-btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
         }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: var(--shadow-hover);
-        }
-
-        .hero-stats {
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            background: var(--white);
-            padding: 30px 40px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            display: flex;
-            gap: 50px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            font-weight: 600;
+        
+        .hero-btn-secondary:hover {
+            background: white;
             color: var(--primary);
         }
-
-        .stat-label {
-            font-size: 13px;
-            color: var(--secondary);
-            margin-top: 4px;
-        }
-
-        /* Properties Section */
-        .properties {
-            padding: 100px 40px;
-            background: var(--white);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 60px;
-        }
-
-        .section-header h2 {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: var(--secondary);
-            font-size: 16px;
-        }
-
-        .properties-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .property-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.4s ease;
-        }
-
-        .property-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .property-image {
-            position: relative;
-            height: 280px;
-            overflow: hidden;
-        }
-
-        .property-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .property-card:hover .property-image img {
-            transform: scale(1.05);
-        }
-
-        .property-tag {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+        
+        /* Contact Bar */
+        .contact-bar {
             background: var(--primary);
-            color: var(--white);
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
-
-        .property-info {
-            padding: 24px;
-        }
-
-        .property-price {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .property-address {
-            font-size: 15px;
-            color: var(--secondary);
-            margin-bottom: 16px;
+        
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
         }
-
-        .property-features {
-            display: flex;
-            gap: 20px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-        }
-
-        .property-feature {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
+        
+        .contact-item i {
             color: var(--secondary);
         }
-
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
         /* About Section */
         .about {
-            padding: 100px 40px;
-            background: var(--off-white);
+            padding: 100px 5%;
+            background: white;
         }
-
-        .about-container {
-            max-width: 1400px;
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .about-image {
-            position: relative;
+        
+        .about-card {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
         }
-
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 8px;
+        
+        .about-card:hover {
+            transform: translateY(-10px);
         }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            z-index: -1;
-        }
-
-        .about-content h2 {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-
-        .about-content p {
+        
+        .about-card i {
+            font-size: 3rem;
             color: var(--secondary);
-            font-size: 16px;
-            margin-bottom: 24px;
-            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
-
-        .about-features {
+        
+        .about-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .about-card p {
+            color: #666;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, #2a4a7d 100%);
+        }
+        
+        .team .section-header h2,
+        .team .section-header p {
+            color: white;
+        }
+        
+        .team .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .team-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .about-feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
         }
-
-        .about-feature-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--white);
-            border-radius: 8px;
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-image {
+            height: 300px;
+            background: linear-gradient(135deg, #ddd 0%, #eee 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent);
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .about-feature h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .about-feature p {
-            font-size: 14px;
-            margin: 0;
-        }
-
-        /* Team Section */
-        .team {
-            padding: 100px 40px;
-            background: var(--white);
-        }
-
-        .team-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .team-card {
-            text-align: center;
-            padding: 40px;
-            background: var(--light-gray);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover {
-            background: var(--white);
-            box-shadow: var(--shadow);
-        }
-
-        .team-image {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 24px;
-            border-radius: 50%;
+            position: relative;
             overflow: hidden;
-            border: 4px solid var(--white);
-            box-shadow: var(--shadow);
         }
-
+        
         .team-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        .team-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
+        
+        .team-image-placeholder {
+            text-align: center;
+            color: #999;
         }
-
+        
+        .team-image-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-info {
+            padding: 30px;
+        }
+        
+        .team-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
         .team-role {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
-
-        .team-card p {
             color: var(--secondary);
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
-
-        .team-social {
+        
+        .team-bio {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-contact {
             display: flex;
-            justify-content: center;
-            gap: 12px;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
-
-        .team-social a {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--white);
+        
+        .team-contact a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--secondary);
+            gap: 8px;
+            color: var(--primary);
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
-
-        .team-social a:hover {
-            background: var(--accent);
-            color: var(--white);
+        
+        .team-contact a:hover {
+            color: var(--secondary);
         }
-
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 5%;
+            background: var(--secondary);
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
         /* Testimonials */
         .testimonials {
-            padding: 100px 40px;
-            background: var(--primary);
-            color: var(--white);
+            padding: 100px 5%;
+            background: var(--light);
         }
-
-        .testimonials .section-header h2 {
-            color: var(--white);
-        }
-
-        .testimonials .section-header p {
-            color: rgba(255,255,255,0.7);
-        }
-
-        .testimonials-grid {
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
         }
-
+        
         .testimonial-card {
-            background: rgba(255,255,255,0.1);
+            background: white;
             padding: 40px;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
         }
-
-        .testimonial-quote {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            color: rgba(255,255,255,0.9);
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
-
+        
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 15px;
         }
-
+        
         .testimonial-avatar {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: var(--accent);
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
             font-weight: 600;
+            font-size: 1.2rem;
         }
-
+        
         .testimonial-name {
             font-weight: 600;
+            color: var(--primary);
         }
-
+        
         .testimonial-location {
-            font-size: 14px;
-            color: rgba(255,255,255,0.6);
+            color: #999;
+            font-size: 0.9rem;
         }
-
+        
         /* Contact Section */
         .contact {
-            padding: 100px 40px;
-            background: var(--white);
+            padding: 100px 5%;
+            background: white;
         }
-
+        
         .contact-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: var(--light-gray);
-            border-radius: 12px;
-            padding: 60px;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 42px;
-            margin-bottom: 16px;
-        }
-
-        .contact p {
-            color: var(--secondary);
-            margin-bottom: 40px;
-        }
-
-        .contact-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea {
-            padding: 16px 20px;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            background: var(--white);
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form select:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .contact-form textarea {
-            grid-column: 1 / -1;
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            grid-column: 1 / -1;
-            background: var(--primary);
-            color: var(--white);
-            padding: 18px;
-            border: none;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 60px 40px 30px;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 60px;
-            margin-bottom: 40px;
         }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.6);
-            margin: 20px 0;
-            font-size: 14px;
-            line-height: 1.8;
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
-
-        .footer-social {
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-row {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
         }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
+        
+        .contact-row i {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-row div {
+            flex: 1;
+        }
+        
+        .contact-row strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+        
+        .contact-row a {
+            color: #666;
             text-decoration: none;
-            transition: all 0.3s ease;
         }
-
-        .footer-social a:hover {
-            background: var(--accent);
+        
+        .contact-row a:hover {
+            color: var(--secondary);
         }
-
-        .footer-links h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
+        
+        .contact-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--white);
+            cursor: pointer;
+            transition: background 0.3s;
         }
-
-        .footer-links ul {
-            list-style: none;
+        
+        .submit-btn:hover {
+            background: #b8922a;
         }
-
-        .footer-links li {
-            margin-bottom: 12px;
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 5% 20px;
         }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
+        
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
-
-        .footer-bottom a {
-            color: rgba(255,255,255,0.5);
+        
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .footer-section p {
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section a {
+            color: #aaa;
             text-decoration: none;
-            margin-left: 20px;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
         }
-
-        .footer-bottom a:hover {
-            color: var(--accent);
+        
+        .footer-section a:hover {
+            color: var(--secondary);
         }
-
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .footer-social a:hover {
+            background: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+        }
+        
         /* Mobile Menu */
-        .mobile-toggle {
+        .mobile-menu-btn {
             display: none;
-            flex-direction: column;
-            gap: 5px;
+            font-size: 1.5rem;
             cursor: pointer;
         }
-
-        .mobile-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .properties-grid,
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
+        
         @media (max-width: 768px) {
-            .nav-links {
+            nav ul {
                 display: none;
             }
-
-            .mobile-toggle {
-                display: flex;
+            
+            .mobile-menu-btn {
+                display: block;
             }
-
-            .hero {
-                padding: 100px 20px 60px;
-            }
-
+            
             .hero h1 {
-                font-size: 36px;
+                font-size: 2.5rem;
             }
-
-            .hero-stats {
-                position: relative;
-                bottom: auto;
-                left: auto;
-                margin-top: 30px;
+            
+            .tagline {
+                font-size: 1.2rem;
             }
-
-            .properties-grid,
-            .team-grid,
-            .testimonials-grid {
+            
+            .contact-container {
                 grid-template-columns: 1fr;
             }
-
-            .section-header h2 {
-                font-size: 36px;
-            }
-
-            .contact-form {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-bottom {
+            
+            .contact-bar {
                 flex-direction: column;
-                gap: 16px;
-                text-align: center;
+                gap: 1rem;
             }
         }
     </style>
@@ -852,224 +670,187 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Team <span>Williams</span></a>
-            <ul class="nav-links">
-                <li><a href="#properties">Properties</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-            </ul>
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="logo">
+            <div class="logo-text">Team <span>Williams</span></div>
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="cta-btn">Get in Touch</a>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-badge">RE/MAX Regency</span>
-                <h1>Find Your Perfect <span>Home</span> on the Gold Coast</h1>
-                <p class="hero-desc">Experience luxury real estate with Team Williams. We're dedicated to finding you the perfect property that matches your lifestyle and dreams.</p>
-                <div class="hero-buttons">
-                    <a href="#properties" class="btn btn-primary">View Properties</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury Home">
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">$2.5B+</div>
-                        <div class="stat-label">Sales Volume</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Properties Sold</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
+        <div class="hero-content">
+            <h1>Ben & Andrea <span>Williams</span></h1>
+            <p class="tagline">
+                <strong>"Highest Price for the Lowest Cost"</strong> | <strong>"Call the number the buyers call"</strong>
+            </p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                Licensed Real Estate Agents — RE/MAX Regency Gold Coast
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="hero-btn hero-btn-primary">
+                    <i class="fas fa-phone"></i> Call 0435 780 117
+                </a>
+                <a href="#contact" class="hero-btn hero-btn-secondary">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Properties Section -->
-    <section class="properties" id="properties">
-        <div class="section-header">
-            <h2>Featured Properties</h2>
-            <p>Discover our handpicked selection of premium properties across the Gold Coast</p>
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:0435780117">0435 780 117</a>
         </div>
-        <div class="properties-grid">
-            <div class="property-card">
-                <div class="property-image">
-                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Property">
-                    <span class="property-tag">For Sale</span>
-                </div>
-                <div class="property-info">
-                    <div class="property-price">$2,850,000</div>
-                    <div class="property-address">📍 123 Ocean Drive, Surfers Paradise</div>
-                    <div class="property-features">
-                        <span class="property-feature">🛏️ 4 Beds</span>
-                        <span class="property-feature">🚿 3 Baths</span>
-                        <span class="property-feature">📐 320 m²</span>
-                    </div>
-                </div>
-            </div>
-            <div class="property-card">
-                <div class="property-image">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Property">
-                    <span class="property-tag">New Listing</span>
-                </div>
-                <div class="property-info">
-                    <div class="property-price">$1,750,000</div>
-                    <div class="property-address">📍 45 Marina Boulevard, Hope Island</div>
-                    <div class="property-features">
-                        <span class="property-feature">🛏️ 3 Beds</span>
-                        <span class="property-feature">🚿 2 Baths</span>
-                        <span class="property-feature">📐 240 m²</span>
-                    </div>
-                </div>
-            </div>
-            <div class="property-card">
-                <div class="property-image">
-                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Property">
-                    <span class="property-tag">Waterfront</span>
-                </div>
-                <div class="property-info">
-                    <div class="property-price">$4,200,000</div>
-                    <div class="property-address">📍 78 Riverside Drive, Main Beach</div>
-                    <div class="property-features">
-                        <span class="property-feature">🛏️ 5 Beds</span>
-                        <span class="property-feature">🚿 4 Baths</span>
-                        <span class="property-feature">📐 450 m²</span>
-                    </div>
-                </div>
-            </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:ben.williams@regency.com.au">ben.williams@regancy.com.au</a>
         </div>
-    </section>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Gold Coast, Queensland</span>
+        </div>
+    </div>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="About Team Williams">
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2>Why Choose Team Williams?</h2>
+            <p>Expert real estate services on the Gold Coast with a commitment to getting you the highest price for the lowest cost.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Top Results</h3>
+                <p>Proven track record of achieving exceptional prices for our clients across the Gold Coast.</p>
             </div>
-            <div class="about-content">
-                <h2>Why Choose Team Williams?</h2>
-                <p>With over 15 years of experience in the Gold Coast real estate market, Team Williams has established an unparalleled reputation for excellence, integrity, and outstanding results.</p>
-                <p>Our commitment to our clients goes beyond just buying or selling properties. We build lasting relationships based on trust, transparency, and exceptional service.</p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon">🏆</div>
-                        <div>
-                            <h4>Award Winning</h4>
-                            <p>Recognized as top performers</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">💎</div>
-                        <div>
-                            <h4>Premium Service</h4>
-                            <p>Tailored to your needs</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">📊</div>
-                        <div>
-                            <h4>Market Experts</h4>
-                            <p>Deep local knowledge</p>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">🤝</div>
-                        <div>
-                            <h4>Trusted Advisors</h4>
-                            <p>Always in your corner</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="about-card">
+                <i class="fas fa-percentage"></i>
+                <h3>Lowest Fees</h3>
+                <p>Competitive commission rates without compromising on quality service or marketing.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Buyer's Choice</h3>
+                <p>"Call the number the buyers call" — we attract more qualified buyers to your property.</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-home"></i>
+                <h3>Local Experts</h3>
+                <p>In-depth knowledge of the Gold Coast real estate market and neighbourhood trends.</p>
             </div>
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Properties Sold</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">$200M+</div>
+            <div class="stat-label">In Sales</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+        </div>
+    </div>
+
     <!-- Team Section -->
-    <section class="team" id="team">
+    <section id="team" class="team">
         <div class="section-header">
-            <h2>Meet Our Team</h2>
-            <p>The dedicated professionals behind your success</p>
+            <h2>Meet Team Williams</h2>
+            <p>Your trusted real estate partners on the Gold Coast</p>
         </div>
         <div class="team-grid">
+            <!-- Ben Williams -->
             <div class="team-card">
                 <div class="team-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Ben Williams">
+                    <div class="team-image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
                 </div>
-                <h3>Ben Williams</h3>
-                <div class="team-role">Principal Agent</div>
-                <p>With 15+ years on the Gold Coast, Ben brings unmatched expertise and a proven track record of success.</p>
-                <div class="team-social">
-                    <a href="#">in</a>
-                    <a href="#">✕</a>
+                <div class="team-info">
+                    <h3>Ben Williams</h3>
+                    <div class="team-role">Licensed Real Estate Agent</div>
+                    <p class="team-bio">Leading the team with over 15 years of experience in Gold Coast real estate. Ben's expertise in negotiation and market analysis ensures maximum returns for every client.</p>
+                    <div class="team-contact">
+                        <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
+                        <a href="mailto:ben.williams@regency.com.au"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Andrea Williams -->
             <div class="team-card">
                 <div class="team-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Sarah Williams">
+                    <div class="team-image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
                 </div>
-                <h3>Sarah Williams</h3>
-                <div class="team-role">Sales Consultant</div>
-                <p>Sarah's exceptional communication skills and market knowledge make her invaluable to our team.</p>
-                <div class="team-social">
-                    <a href="#">in</a>
-                    <a href="#">✕</a>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-image">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="James Chen">
-                </div>
-                <h3>James Chen</h3>
-                <div class="team-role">Property Manager</div>
-                <p>James ensures every transaction runs smoothly with his meticulous attention to detail.</p>
-                <div class="team-social">
-                    <a href="#">in</a>
-                    <a href="#">✕</a>
+                <div class="team-info">
+                    <h3>Andrea Williams</h3>
+                    <div class="team-role">Licensed Real Estate Agent</div>
+                    <p class="team-bio">Working alongside Ben to provide comprehensive real estate services. Andrea brings exceptional client care and organizational skills to ensure smooth transactions.</p>
+                    <div class="team-contact">
+                        <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
+                        <a href="mailto:ben.williams@regency.com.au"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <section id="testimonials" class="testimonials">
         <div class="section-header">
             <h2>What Our Clients Say</h2>
-            <p>Real stories from real clients who've found their dream homes</p>
+            <p>Real results from real clients</p>
         </div>
-        <div class="testimonials-grid">
+        <div class="testimonial-grid">
             <div class="testimonial-card">
-                <p class="testimonial-quote">"Team Williams made our first home buying experience effortless. Their knowledge of the Gold Coast market is unmatched and they found us the perfect family home."</p>
+                <p class="testimonial-text">"Ben and Andrea were fantastic from start to finish. They got us $50,000 above our asking price! Their knowledge of the Gold Coast market is unmatched."</p>
                 <div class="testimonial-author">
-                    <div class="testimonial-avatar">MK</div>
+                    <div class="testimonial-avatar">JM</div>
                     <div>
-                        <div class="testimonial-name">Michael & Kate Thompson</div>
+                        <div class="testimonial-name">John & Mary Mitchell</div>
                         <div class="testimonial-location">Surfers Paradise</div>
                     </div>
                 </div>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-quote">"We sold our property in record time thanks to Team Williams. Their marketing strategy and professional approach exceeded all our expectations."</p>
+                <p class="testimonial-text">"The best real estate agents we've ever worked with. Professional, responsive, and truly cared about getting us the best result. Highly recommend!"</p>
                 <div class="testimonial-author">
-                    <div class="testimonial-avatar">RJ</div>
+                    <div class="testimonial-avatar">SP</div>
                     <div>
-                        <div class="testimonial-name">Robert Johnson</div>
-                        <div class="testimonial-location">Main Beach</div>
+                        <div class="testimonial-name">Sarah & Peter Thompson</div>
+                        <div class="testimonial-location">Broadbeach</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"We were skeptical about the 'lowest cost' claim, but the service was excellent and we saved thousands in commission. Still got top dollar for our home!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DK</div>
+                    <div>
+                        <div class="testimonial-name">David & Karen Lee</div>
+                        <div class="testimonial-location">Mermaid Beach</div>
                     </div>
                 </div>
             </div>
@@ -1077,90 +858,124 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Contact Team Williams</h2>
+            <p>Ready to sell or buy? Let's discuss your real estate goals</p>
+        </div>
         <div class="contact-container">
-            <h2>Ready to Find Your Dream Home?</h2>
-            <p>Get in touch with us today for a free property valuation or consultation</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="tel" placeholder="Phone Number">
-                <select>
-                    <option value="">I'm interested in...</option>
-                    <option value="buy">Buying a property</option>
-                    <option value="sell">Selling my property</option>
-                    <option value="rent">Renting</option>
-                    <option value="valuation">Property valuation</option>
-                </select>
-                <textarea placeholder="Your message..."></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-row">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone (Call)</strong>
+                            <a href="tel:0435780117">0435 780 117</a>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:ben.williams@regency.com.au">ben.williams@regancy.com.au</a>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Office</strong>
+                            <span>RE/MAX Regency Gold Coast</span>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Service Area</strong>
+                            <span>All Gold Coast & Surrounding Areas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label>I'm interested in:</label>
+                        <select>
+                            <option>Selling my property</option>
+                            <option>Buying a property</option>
+                            <option>Property valuation</option>
+                            <option>Other inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <a href="#" class="logo">Team <span>Williams</span></a>
-                <p>Your trusted partner in Gold Coast real estate. We're committed to helping you find your perfect property.</p>
-                <div class="footer-social">
-                    <a href="#">in</a>
-                    <a href="#">✕</a>
-                    <a href="#">📘</a>
-                    <a href="#">📸</a>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Team Williams</h4>
+                <p>RE/MAX Regency Gold Coast</p>
+                <p>Licensed Real Estate Agents</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--secondary);">
+                    "Highest Price for the Lowest Cost"
+                </p>
             </div>
-            <div class="footer-links">
+            <div class="footer-section">
                 <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#properties">Properties</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <a href="#about">About Us</a>
+                <a href="#team">Our Team</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div class="footer-links">
+            <div class="footer-section">
                 <h4>Services</h4>
-                <ul>
-                    <li><a href="#">Buy Property</a></li>
-                    <li><a href="#">Sell Property</a></li>
-                    <li><a href="#">Property Management</a></li>
-                    <li><a href="#"> valuations</a></li>
-                </ul>
+                <a href="#contact">Property Sales</a>
+                <a href="#contact">Buyer's Agent</a>
+                <a href="#contact">Property Valuation</a>
+                <a href="#contact">Market Appraisals</a>
             </div>
-            <div class="footer-links">
+            <div class="footer-section">
                 <h4>Contact</h4>
-                <ul>
-                    <li>📍 Gold Coast, Queensland</li>
-                    <li>📞 (07) 5555 1234</li>
-                    <li>✉️ info@teamwilliams.com.au</li>
-                </ul>
+                <a href="tel:0435780117"><i class="fas fa-phone"></i> 0435 780 117</a>
+                <a href="mailto:ben.williams@regency.com.au"><i class="fas fa-envelope"></i> ben.williams@regancy.com.au</a>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Team Williams - RE/MAX Regency Gold Coast. All rights reserved.</p>
-            <div>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+            <p>&copy; 2024 Team Williams RE/MAX Regency Gold Coast. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Navigation scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for anchor links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1170,6 +985,31 @@
                     });
                 }
             });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+                navUl.style.flexDirection = 'column';
+                navUl.style.position = 'absolute';
+                navUl.style.top = '70px';
+                navUl.style.left = '0';
+                navUl.style.width = '100%';
+                navUl.style.background = 'white';
+                navUl.style.padding = '20px';
+                navUl.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            });
+        }
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! Ben or Andrea will be in touch shortly.');
+            this.reset();
         });
     </script>
 </body>
