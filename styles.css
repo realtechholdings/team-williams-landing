@@ -618,6 +618,34 @@ section {
     letter-spacing: 1px;
 }
 
+/* Video Section */
+.video-section {
+    background-color: var(--bg-white);
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+}
+
+.video-cta {
+    text-align: center;
+}
+
+.video-cta p {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
 /* Team Section */
 .team-section {
     background-color: var(--bg-light);
