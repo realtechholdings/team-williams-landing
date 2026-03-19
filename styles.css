@@ -802,7 +802,8 @@ section::before {
 }
 
 /* Dark section subtitles */
-.dark-section .section-subtitle {
+.dark-section .section-subtitle,
+.dark .section-subtitle {
     color: var(--accent-color);  /* Red accent on dark backgrounds */
     padding-left: 16px;
     position: relative;
@@ -1543,6 +1544,19 @@ section::before {
     position: relative;
     padding: 100px 0;
     overflow: hidden;
+}
+
+/* Ensure text contrast on cream background */
+.testimonials-section .section-header h2 {
+    color: #1a1a2e;
+}
+
+.testimonials-section .section-header p {
+    color: #475569;
+}
+
+.testimonials-section .section-subtitle {
+    color: #1a1a2e;
 }
 
 .testimonials-section::before {
