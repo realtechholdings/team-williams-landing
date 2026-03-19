@@ -1,9 +1,9 @@
 /* ============================================
    Team Williams RE/MAX Regency - Stylesheet
-   Creator Army Inspired Design Refinements
+   Creator Army Inspired Design Refinements v3
    ============================================ */
 
-/* Font Imports - Creator Army inspired typography */
+/* Font Imports - Creator Army typography */
 @font-face {
     font-family: "General Sans";
     font-weight: 400;
@@ -36,13 +36,17 @@
     src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/ZuumeEdge-SemiBold.ttf") format("truetype");
 }
 
-/* CSS Variables - Creator Army Refined Palette */
+/* CSS Variables - Creator Army Refined Palette - User Specified */
 :root {
     /* Brand Colors - User Specified */
     --brand-primary: #1a3668;    /* Dark Blue */
-    --brand-secondary: #0f172a;  /* Deep Navy */
-    --accent-color: #dc1c2e;      /* Red accent */
+    --brand-secondary: #660000;  /* Dark Red */
+    --accent-color: #dc1c2e;     /* Red accent */
     --accent-gold: #c9a227;      /* Gold accent */
+    
+    /* Creator Army Accent (replaced with user accent) */
+    --electric-green: #dc1c2e;
+    --electric-green-dim: rgba(220, 28, 46, 0.15);
     
     /* Derived Colors */
     --primary-color: var(--accent-color);
@@ -63,10 +67,6 @@
     --text-lightest: #94a3b8;
     --text-white: #ffffff;
     
-    /* Brand Colors */
-    --brand-blue: #1a3668;
-    --brand-red: #660000;
-    
     /* Shadows - Creator Army refined */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -76,6 +76,7 @@
     --shadow-accent: 0 8px 30px rgba(220, 28, 46, 0.25);
     --shadow-blue: 0 8px 30px rgba(26, 54, 104, 0.25);
     --shadow-gold: 0 8px 30px rgba(201, 162, 39, 0.25);
+    --shadow-green: 0 8px 30px rgba(220, 28, 46, 0.25);
     
     /* Border Radius */
     --radius-sm: 8px;
@@ -89,7 +90,7 @@
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Section Padding */
-    --section-padding: 120px;
+    --section-padding: 100px;
 }
 
 /* Body and Base */
@@ -215,6 +216,9 @@ ul {
     position: relative;
     overflow: hidden;
     font-family: 'General Sans', 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 12px;
 }
 
 /* Creator Army inspired shimmer effect */
@@ -256,20 +260,20 @@ ul {
     box-shadow: 0 8px 20px rgba(227, 25, 55, 0.3);
 }
 
-/* Creator Army style outline button */
+/* Creator Army style outline button - electric green accent */
 .btn-outline {
     background-color: transparent;
     color: var(--text-white);
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid var(--accent-color);
     backdrop-filter: blur(4px);
 }
 
 .btn-outline:hover {
-    background-color: var(--brand-green);
-    color: #0f0f10;
-    border-color: var(--brand-green);
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    border-color: var(--accent-color);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-green), 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-accent), 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Creator Army style secondary */
@@ -308,7 +312,7 @@ ul {
 /* Creator Army focus ring style for accessibility */
 .btn:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px var(--bg-white), 0 0 0 6px var(--brand-green);
+    box-shadow: 0 0 0 3px var(--bg-white), 0 0 0 6px var(--brand-primary);
 }
 
 /* Creator Army: Input focus refinement */
@@ -317,7 +321,7 @@ ul {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1), 0 0 0 2px var(--brand-green-light);
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1), 0 0 0 2px var(--brand-primary);
     transform: translateY(-1px);
 }
 
@@ -472,7 +476,7 @@ ul {
     background: 
         radial-gradient(ellipse at 30% 20%, rgba(227, 25, 55, 0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 70% 80%, rgba(201, 162, 39, 0.08) 0%, transparent 40%),
-        radial-gradient(ellipse at 85% 15%, rgba(206, 255, 0, 0.05) 0%, transparent 30%),
+        radial-gradient(ellipse at 85% 15%, rgba(220, 28, 46, 0.05) 0%, transparent 30%),
         linear-gradient(180deg, 
             rgba(15, 23, 42, 0.94) 0%, 
             rgba(15, 23, 42, 0.82) 50%, 
@@ -514,62 +518,66 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(201, 162, 39, 0.15);
-    border: 1px solid rgba(201, 162, 39, 0.3);
-    padding: 10px 24px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 28px;
     border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 35px;
-    color: var(--accent-color);
-    font-family: 'Inter', sans-serif;
-    backdrop-filter: blur(4px);
+    letter-spacing: 2.5px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-family: 'General Sans', 'Inter', sans-serif;
+    backdrop-filter: blur(8px);
 }
 
 .hero-badge::before {
     content: '';
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: var(--accent-color);
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.9); }
 }
 
+/* Creator Army style: bolder hero heading */
 .hero h1 {
-    font-size: clamp(42px, 7vw, 72px);
-    margin-bottom: 20px;
+    font-size: clamp(52px, 9vw, 96px);
+    margin-bottom: 24px;
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .partner-name {
     display: block;
-    font-size: 0.55em;
+    font-size: 0.45em;
     font-weight: 400;
-    opacity: 0.85;
-    margin-top: 15px;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 0.1em;
+    opacity: 0.75;
+    margin-top: 20px;
+    font-family: 'General Sans', 'Inter', sans-serif;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .hero-title {
-    font-size: clamp(17px, 2.2vw, 22px);
-    opacity: 0.85;
-    margin-bottom: 30px;
+    font-size: clamp(18px, 2.5vw, 24px);
+    opacity: 0.8;
+    margin-bottom: 35px;
     font-weight: 400;
-    max-width: 650px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .hero-taglines {
@@ -600,26 +608,34 @@ ul {
 .contact-phone {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    font-size: 22px;
+    gap: 14px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text-white);
-    padding: 18px 32px;
-    background-color: rgba(255, 255, 255, 0.08);
+    padding: 20px 36px;
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--border-radius-sm);
-    transition: var(--transition);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(12px);
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .contact-phone:hover {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     border-color: var(--primary-color);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(227, 25, 55, 0.4);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(227, 25, 55, 0.45);
 }
 
 .contact-phone i {
-    font-size: 18px;
+    font-size: 16px;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.contact-phone:hover i {
+    color: var(--text-white);
 }
 
 .hero-cta {
@@ -687,56 +703,58 @@ section::before {
 .section-header::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
-    margin: 28px auto 0;
-    border-radius: 3px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--brand-primary));
+    margin: 30px auto 0;
+    border-radius: 2px;
 }
 
-/* Section subtitle styling */
+/* Section subtitle styling - Creator Army clean style */
 .section-subtitle {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 3px;
     color: var(--accent-color);
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, rgba(220, 28, 46, 0.15) 0%, rgba(220, 28, 46, 0.05) 100%);
-    padding: 10px 22px;
+    margin-bottom: 20px;
+    background: rgba(220, 28, 46, 0.08);
+    padding: 12px 26px;
     border-radius: 50px;
-    font-family: 'Inter', sans-serif;
-    border: 1px solid rgba(220, 28, 46, 0.2);
+    font-family: 'General Sans', 'Inter', sans-serif;
+    border: 1px solid rgba(220, 28, 46, 0.15);
     position: relative;
 }
 
 /* Accent dot */
 .section-subtitle::before {
     content: '';
-    width: 6px;
-    height: 6px;
-    background-color: var(--brand-primary);
+    width: 5px;
+    height: 5px;
+    background-color: var(--accent-color);
     border-radius: 50%;
     flex-shrink: 0;
 }
 
 .section-header h2 {
-    font-size: clamp(38px, 5vw, 56px);
+    font-size: clamp(42px, 6vw, 64px);
     color: var(--text-dark);
-    margin-bottom: 22px;
-    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
     font-weight: 700;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .section-header p {
     font-size: 18px;
     color: var(--text-medium);
-    max-width: 640px;
+    max-width: 600px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.75;
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 /* Properties Section */
@@ -755,25 +773,26 @@ section::before {
 }
 
 .filter-btn {
-    padding: 12px 28px;
-    font-size: 14px;
+    padding: 14px 32px;
+    font-size: 13px;
     font-weight: 600;
     background-color: var(--bg-white);
-    border: 2px solid #e2e5e9;
+    border: 2px solid rgba(255, 255, 255, 0.08);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: 'General Sans', 'Inter', sans-serif;
-    color: var(--text-medium);
+    color: var(--text-lightest);
+    letter-spacing: 0.5px;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--brand-primary);
-    border-color: var(--brand-primary);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
     color: var(--text-white);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(26, 54, 104, 0.35);
+    box-shadow: 0 12px 30px rgba(220, 28, 46, 0.35);
 }
 
 .properties-grid {
@@ -783,14 +802,14 @@ section::before {
     margin-bottom: 45px;
 }
 
-/* Property Card refinements - dark theme */
+/* Property Card refinements - Creator Army style - dark theme */
 .property-card {
     background-color: var(--bg-light);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 
         0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 4px 20px rgba(0, 0, 0, 0.2);
+        0 4px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
@@ -804,15 +823,15 @@ section::before {
     border-radius: 24px;
     opacity: 0;
     transition: opacity 0.5s ease;
-    box-shadow: 0 0 0 2px var(--brand-primary);
+    box-shadow: 0 0 0 2px var(--accent-color);
     pointer-events: none;
 }
 
 .property-card:hover {
-    transform: translateY(-12px);
+    transform: translateY(-14px);
     box-shadow: 
-        0 30px 60px -15px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(26, 54, 104, 0.2);
+        0 35px 70px -20px rgba(0, 0, 0, 0.35),
+        0 0 60px rgba(220, 28, 46, 0.15);
     border-color: transparent;
 }
 
@@ -822,7 +841,7 @@ section::before {
 
 .property-image {
     position: relative;
-    height: 260px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -834,7 +853,7 @@ section::before {
 }
 
 .property-card:hover .property-image img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 /* Creator Army style image overlay on hover */
@@ -845,7 +864,7 @@ section::before {
     background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 50%,
-        rgba(0, 0, 0, 0.3) 100%
+        rgba(0, 0, 0, 0.4) 100%
     );
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -861,44 +880,45 @@ section::before {
     top: 16px;
     left: 16px;
     padding: 8px 18px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     border-radius: 6px;
     color: var(--text-white);
     font-family: 'General Sans', 'Inter', sans-serif;
     z-index: 2;
+    backdrop-filter: blur(8px);
 }
 
 .property-badge.sale {
-    background-color: #10b981;
+    background: rgba(16, 185, 129, 0.9);
 }
 
 .property-badge.rent {
-    background-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.9);
 }
 
 .property-badge.sold {
-    background-color: var(--primary-color);
+    background: rgba(220, 28, 46, 0.9);
 }
 
 .property-details {
-    padding: 28px;
+    padding: 28px 30px;
 }
 
 .property-details h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: var(--text-dark);
+    color: var(--text-white);
     font-weight: 600;
     font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .property-address {
     font-size: 14px;
-    color: var(--text-medium);
-    margin-bottom: 16px;
+    color: var(--text-lightest);
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -908,10 +928,10 @@ section::before {
 .property-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 20px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .property-features span {
@@ -919,20 +939,22 @@ section::before {
     align-items: center;
     gap: 6px;
     font-size: 14px;
-    color: var(--text-medium);
+    color: var(--text-lightest);
     font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .property-features i {
-    color: var(--brand-primary);
+    color: var(--accent-color);
+    font-size: 13px;
 }
 
 .property-price {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-white);
     margin-bottom: 16px;
     font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.02em;
 }
 
 .properties-cta {
@@ -1035,9 +1057,9 @@ section::before {
     letter-spacing: 1px;
 }
 
-/* Video Section - Modern dark theme design */
+/* Video Section - Creator Army refined dark theme */
 .video-section {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-darker);
     position: relative;
     overflow: hidden;
     padding: 100px 0;
@@ -1050,7 +1072,7 @@ section::before {
     right: -10%;
     width: 50%;
     height: 160%;
-    background: radial-gradient(circle, rgba(26, 54, 104, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(220, 28, 46, 0.08) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -1073,20 +1095,24 @@ section::before {
     margin-bottom: 50px;
 }
 
+.video-section .section-header::after {
+    background: linear-gradient(90deg, var(--brand-primary), var(--accent-color));
+}
+
 .video-section .section-header p {
     font-size: 17px;
-    color: var(--text-medium);
+    color: var(--text-lightest);
 }
 
 .video-wrapper {
     max-width: 900px;
     margin: 0 auto 40px;
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
     box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(0,0,0,0.05),
-        0 0 80px rgba(206, 255, 0, 0.1);
+        0 25px 50px -12px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(220, 28, 46, 0.1),
+        0 0 80px rgba(220, 28, 46, 0.08);
     position: relative;
     background: var(--secondary-color);
 }
@@ -1095,15 +1121,15 @@ section::before {
     width: 100%;
     display: block;
     aspect-ratio: 16/9;
-    border-radius: 20px;
+    border-radius: 24px;
 }
 
 .video-wrapper::before {
     content: '';
     position: absolute;
     inset: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
     pointer-events: none;
     z-index: 2;
 }
@@ -1129,7 +1155,7 @@ section::before {
 
 .video-wrapper .play-overlay:hover {
     transform: translate(-50%, -50%) scale(1.1);
-    background: var(--brand-green);
+    background: var(--accent-color);
 }
 
 .video-wrapper .play-overlay i {
@@ -1216,7 +1242,7 @@ section::before {
     border-radius: 24px;
     opacity: 0;
     transition: opacity 0.5s ease;
-    box-shadow: 0 0 0 2px var(--brand-green);
+    box-shadow: 0 0 0 2px var(--accent-color);
     pointer-events: none;
 }
 
@@ -1224,7 +1250,7 @@ section::before {
     transform: translateY(-12px);
     box-shadow: 
         0 30px 60px -15px rgba(0, 0, 0, 0.15),
-        0 0 40px rgba(206, 255, 0, 0.2);
+        0 0 40px rgba(220, 28, 46, 0.2);
 }
 
 .team-card:hover::after {
@@ -1305,7 +1331,7 @@ section::before {
     left: 28px;
     right: 28px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--brand-green));
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     border-radius: 2px;
     transform: scaleX(0);
     transform-origin: left;
@@ -1436,7 +1462,7 @@ section::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--brand-green));
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1444,7 +1470,7 @@ section::before {
 .testimonial-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-4px);
-    border-color: rgba(206, 255, 0, 0.3);
+    border-color: rgba(220, 28, 46, 0.3);
 }
 
 .testimonial-card:hover::before {
