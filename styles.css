@@ -761,11 +761,16 @@ section::before {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--accent-color);
+    color: #1a1a2e;  /* Dark for visibility on light backgrounds */
     margin-bottom: 20px;
     font-family: 'General Sans', 'Inter', sans-serif;
     position: relative;
     padding-left: 16px;
+}
+
+/* Dark section subtitles */
+.dark-section .section-subtitle {
+    color: var(--accent-color);  /* Red accent on dark backgrounds */
 }
 
 /* Accent bar */
