@@ -1073,6 +1073,28 @@ section::before {
     text-align: left;
 }
 
+/* Ensure dark section text has proper contrast */
+.dark-section .about-lead,
+.dark-section .feature-text p,
+.dark-section .team-bio {
+    color: rgba(255, 255, 255, 0.85); /* Increased from 0.75 to 0.85 for better contrast */
+}
+
+.dark-section .feature-text h4,
+.dark-section .team-info h3 {
+    color: #ffffff;
+}
+
+/* About section specific text contrast */
+.about-section.dark-section .about-lead,
+.about-section.dark-section .feature-text p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.about-section.dark-section .feature-text h4 {
+    color: #ffffff;
+}
+
 .about-lead {
     font-size: 18px;
     color: var(--text-light);
