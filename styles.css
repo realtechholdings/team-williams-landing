@@ -1589,6 +1589,22 @@ section::before {
 
 /* Removed colored border on hover - cards now pop via enhanced shadow */
 
+/* Testimonials Section Header - Ensure visibility on cream background */
+.testimonials-section .section-header {
+    margin-bottom: 50px;
+}
+
+.testimonials-section .section-header h2 {
+    color: #1a1a2e; /* Dark text for contrast on cream */
+    margin-bottom: 16px;
+}
+
+.testimonials-section .section-header p {
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .testimonial-stars {
     margin-bottom: 20px;
 }
