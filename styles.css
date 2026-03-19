@@ -420,7 +420,7 @@ section {
 }
 
 .property-card {
-    background: var(--bg-light);
+    background: var(--bg-darker);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -613,7 +613,7 @@ section {
     margin: 0 auto 40px;
     border-radius: 20px;
     overflow: hidden;
-    background: var(--bg-light);
+    background: var(--bg-darker);
     box-shadow: var(--shadow-xl);
 }
 
@@ -647,7 +647,7 @@ section {
 }
 
 .team-card {
-    background: var(--bg-light);
+    background: var(--bg-darker);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -747,7 +747,7 @@ section {
 }
 
 .testimonial-card {
-    background: var(--bg-light);
+    background: var(--bg-darker);
     padding: 30px;
     border-radius: 16px;
     transition: all 0.3s ease;
@@ -897,7 +897,7 @@ section {
 
 /* Contact Form */
 .contact-form-wrapper {
-    background: var(--bg-light);
+    background: var(--bg-darker);
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
