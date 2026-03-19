@@ -95,7 +95,7 @@
 
 /* Body and Base */
 body {
-    font-family: 'General Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-dark);
     line-height: 1.7;
     background-color: var(--bg-white);
@@ -215,7 +215,7 @@ ul {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 12px;
@@ -266,7 +266,7 @@ ul {
     letter-spacing: 4px;
     margin-bottom: 48px;
     color: #ffffff;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     padding: 16px 36px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -560,7 +560,7 @@ ul {
     letter-spacing: 3px;
     margin-bottom: 40px;
     color: #ffffff;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     padding: 14px 32px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -598,7 +598,7 @@ ul {
     font-weight: 400;
     opacity: 0.75;
     margin-top: 20px;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 500;
@@ -613,7 +613,7 @@ ul {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero-taglines {
@@ -654,7 +654,7 @@ ul {
     border-radius: 16px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(12px);
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .contact-phone:hover {
@@ -797,7 +797,7 @@ section::before {
     letter-spacing: 3px;
     color: #1a1a2e;  /* Dark for visibility on light backgrounds */
     margin-bottom: 20px;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     padding-left: 16px;
 }
@@ -872,7 +872,7 @@ section::before {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-lightest);
     letter-spacing: 1.2px;
 }
@@ -986,7 +986,7 @@ section::before {
     letter-spacing: 1px;
     border-radius: 6px;
     color: var(--text-white);
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     z-index: 2;
     backdrop-filter: blur(8px);
 }
@@ -1022,7 +1022,7 @@ section::before {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .property-features {
@@ -1040,7 +1040,7 @@ section::before {
     gap: 6px;
     font-size: 14px;
     color: var(--text-medium);
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .property-features i {
@@ -1509,7 +1509,7 @@ section::before {
     padding: 6px 12px;
     border-radius: 4px;
     border: 1px solid rgba(227, 25, 55, 0.1);
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .team-bio {
@@ -1517,7 +1517,7 @@ section::before {
     color: var(--text-medium);
     line-height: 1.75;
     margin-bottom: 20px;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .team-contact {
@@ -1536,7 +1536,7 @@ section::before {
     color: var(--text-light);
     transition: all 0.3s ease;
     font-weight: 500;
-    font-family: 'General Sans', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .team-contact a:hover {
