@@ -2,7 +2,7 @@
    Team Williams RE/MAX Regency - Stylesheet
    ============================================ */
 
-/* CSS Variables */
+/* CSS Variables - Creator Army Inspired Design Refinements */
 :root {
     --primary-color: #e31937;
     --primary-dark: #b8142b;
@@ -15,7 +15,6 @@
     --brand-green: #CEFF00;
     --brand-green-light: #EBFF99;
     --brand-green-dark: #A5CC00;
-    /* Creator Army design refinements */
     --ring-color: #CEFF00;
     --ring-offset: 2px;
     --text-dark: #0f172a;
@@ -32,9 +31,11 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    /* Creator Army refined elevation shadows */
     --shadow-low: 0px 2px 6px 4px rgba(0, 0, 0, 0.08);
     --shadow-max: 0px 2px 25px 4px rgba(0, 0, 0, 0.12);
     --shadow-green: 0 0 20px rgba(206, 255, 0, 0.4);
+    /* Creator Army refined radius */
     --border-radius: 12px;
     --border-radius-sm: 8px;
     --border-radius-lg: 16px;
@@ -211,6 +212,22 @@ ul {
 
 .btn-full {
     width: 100%;
+}
+
+/* Creator Army focus ring style for accessibility */
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--bg-white), 0 0 0 6px var(--brand-green);
+}
+
+/* Creator Army: Input focus refinement */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1), 0 0 0 2px var(--brand-green-light);
+    transform: translateY(-1px);
 }
 
 /* Header */
@@ -560,6 +577,7 @@ section {
     border-radius: 3px;
 }
 
+/* Creator Army style: subtle emphasis on subtitle */
 .section-subtitle {
     display: inline-flex;
     align-items: center;
@@ -575,6 +593,17 @@ section {
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
     border: 1px solid rgba(227, 25, 55, 0.12);
+    position: relative;
+}
+
+/* Creator Army accent dot */
+.section-subtitle::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--brand-green);
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .section-header h2 {
@@ -647,7 +676,18 @@ section {
     position: relative;
 }
 
-/* Creator Army style: subtle glow on hover */
+/* Property Card refinements - Creator Army style */
+.property-card {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+/* Creator Army style: subtle glow on hover with refined shadow */
 .property-card::before {
     content: '';
     position: absolute;
@@ -661,7 +701,10 @@ section {
 
 .property-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1), 
+        0 8px 16px rgba(0, 0, 0, 0.06),
+        0 0 40px rgba(206, 255, 0, 0.15);
     border-color: transparent;
 }
 
