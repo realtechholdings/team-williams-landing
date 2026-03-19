@@ -724,7 +724,40 @@ ul {
 section {
     padding: var(--section-padding) 0;
     position: relative;
+    background-color: var(--bg-white);  /* Default to light background */
+}
+
+/* Dark sections need explicit class */
+section.dark-section,
+section.dark {
     background-color: var(--bg-dark);
+}
+
+/* Dark section specific text colors - ensure visibility */
+.dark-section .section-header h2 {
+    color: #ffffff;
+}
+
+.dark-section .section-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dark-section .section-subtitle {
+    color: var(--accent-color);  /* Red accent on dark backgrounds */
+}
+
+.dark-section .about-lead,
+.dark-section .feature-text p,
+.dark-section .team-bio {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-section .feature-text h4,
+.dark-section .team-info h3 {
+    color: #ffffff;
 }
 
 /* Section subtle line accent */
@@ -788,20 +821,20 @@ section::before {
 
 .section-header h2 {
     font-size: clamp(42px, 6vw, 64px);
-    color: #ffffff;
+    color: var(--text-dark);  /* Default dark - works on light backgrounds */
     margin-bottom: 24px;
     letter-spacing: -0.03em;
     font-weight: 700;
     font-family: 'Poppins', 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
-.section-header p {
-    font-size: 18px;
+/* Dark section headers */
+.dark-section .section-header h2 {
+    color: #ffffff;  /* White on dark backgrounds */
+}
+
+.dark-section .section-header p {
     color: rgba(255, 255, 255, 0.75);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.75;
-    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 /* Properties Section */
