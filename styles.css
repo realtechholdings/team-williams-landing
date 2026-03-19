@@ -36,46 +36,55 @@
     src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/ZuumeEdge-SemiBold.ttf") format("truetype");
 }
 
-/* CSS Variables - Creator Army Inspired Design Refinements */
+/* CSS Variables - Updated Color Palette */
 :root {
-    --primary-color: #e31937;
+    /* Brand Colors - User Specified */
+    --brand-primary: #1a3668;    /* Dark Blue */
+    --brand-secondary: #660000;   /* Dark Red */
+    --accent-color: #dc1c2e;     /* Red accent */
+    
+    /* Derived Colors */
+    --primary-color: var(--accent-color);
     --primary-dark: #b8142b;
-    --primary-light: rgba(227, 25, 55, 0.08);
-    --secondary-color: #0f172a;
-    --secondary-light: #1e293b;
-    --accent-color: #c9a227;
-    --accent-light: rgba(201, 162, 39, 0.15);
-    /* Creator Army inspired electric green accent */
-    --brand-green: #CEFF00;
-    --brand-green-light: #EBFF99;
-    --brand-green-dark: #A5CC00;
-    --ring-color: #CEFF00;
-    --ring-offset: 2px;
-    --text-dark: #0f172a;
-    --text-medium: #475569;
-    --text-light: #64748b;
-    --text-lightest: #94a3b8;
-    --text-white: #ffffff;
-    --bg-light: #f8fafc;
+    --primary-light: rgba(220, 28, 46, 0.08);
+    
+    /* Background Colors - Creator Army dark theme */
+    --bg-dark: #18181b;
+    --bg-darker: #0f0f10;
+    --bg-light: #27272a;
     --bg-white: #ffffff;
     --bg-cream: #faf9f7;
-    /* Creator Army inspired shadows - sharper, deeper */
+    
+    /* Text Colors */
+    --text-dark: #ffffff;
+    --text-medium: #d4d4d8;
+    --text-light: #a1a1aa;
+    --text-lightest: #71717a;
+    --text-white: #ffffff;
+    
+    /* Brand Green replaced with user colors */
+    --brand-blue: #1a3668;
+    --brand-red: #660000;
+    
+    /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    /* Creator Army refined elevation shadows */
-    --shadow-low: 0px 2px 6px 4px rgba(0, 0, 0, 0.08);
-    --shadow-max: 0px 2px 25px 4px rgba(0, 0, 0, 0.12);
-    --shadow-green: 0 0 20px rgba(206, 255, 0, 0.4);
-    /* Creator Army refined radius */
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-accent: 0 0 20px rgba(220, 28, 46, 0.4);
+    --shadow-blue: 0 0 20px rgba(26, 54, 104, 0.4);
+    
+    /* Border Radius */
     --border-radius: 12px;
     --border-radius-sm: 8px;
     --border-radius-lg: 16px;
+    
+    /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Refined spacing */
-    --section-padding: 140px;
+    
+    /* Section Padding */
+    --section-padding: 100px;
 }
 
 /* Body and Base */
