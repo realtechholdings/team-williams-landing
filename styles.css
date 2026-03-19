@@ -545,8 +545,10 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-    /* Now handled by ::before pseudo-element */
+    /* Strong dark gradient from left to right for text visibility */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 40%, rgba(15, 23, 42, 0.5) 70%, rgba(15, 23, 42, 0.3) 100%);
     pointer-events: none;
+    z-index: 2;
 }
 
 .hero-content {
