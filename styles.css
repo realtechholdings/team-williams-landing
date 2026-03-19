@@ -1388,7 +1388,7 @@ section::before {
 .team-image {
     height: 320px;
     overflow: hidden;
-    background-color: #f1f5f9;
+    background-color: transparent;
     position: relative;
 }
 
