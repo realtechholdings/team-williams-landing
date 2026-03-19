@@ -804,6 +804,8 @@ section::before {
 /* Dark section subtitles */
 .dark-section .section-subtitle {
     color: var(--accent-color);  /* Red accent on dark backgrounds */
+    padding-left: 16px;
+    position: relative;
 }
 
 /* Accent bar */
