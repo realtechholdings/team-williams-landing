@@ -270,10 +270,25 @@ ul {
 
 .btn-outline:hover {
     background-color: var(--accent-color);
-    color: var(--text-dark);
+    color: var(--text-white);
     border-color: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: var(--shadow-accent), 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Creator Army style brand button - electric green */
+.btn-brand {
+    background-color: #CEFF00;
+    color: #0f172a;
+    border: 2px solid #CEFF00;
+    font-weight: 700;
+}
+
+.btn-brand:hover {
+    background-color: #b8e600;
+    border-color: #b8e600;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(206, 255, 0, 0.3);
 }
 
 /* Creator Army style secondary */
@@ -474,13 +489,13 @@ ul {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse at 30% 20%, rgba(227, 25, 55, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, rgba(201, 162, 39, 0.08) 0%, transparent 40%),
-        radial-gradient(ellipse at 85% 15%, rgba(220, 28, 46, 0.05) 0%, transparent 30%),
+        radial-gradient(ellipse at 30% 20%, rgba(220, 28, 46, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(201, 162, 39, 0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 15%, rgba(220, 28, 46, 0.08) 0%, transparent 30%),
         linear-gradient(180deg, 
-            rgba(15, 23, 42, 0.94) 0%, 
-            rgba(15, 23, 42, 0.82) 50%, 
-            rgba(15, 23, 42, 0.92) 100%);
+            rgba(15, 23, 42, 0.92) 0%, 
+            rgba(15, 23, 42, 0.78) 50%, 
+            rgba(15, 23, 42, 0.9) 100%);
     pointer-events: none;
 }
 
@@ -493,7 +508,7 @@ ul {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.04;
+    opacity: 0.035;
     z-index: 1;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
@@ -517,18 +532,18 @@ ul {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 28px;
-    border-radius: 50px;
+    gap: 10px;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 3px;
     margin-bottom: 40px;
     color: #ffffff;
     font-family: 'General Sans', 'Inter', sans-serif;
+    position: relative;
+    padding: 14px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(8px);
 }
 
@@ -703,40 +718,38 @@ section::before {
 .section-header::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-color), var(--brand-primary));
-    margin: 30px auto 0;
-    border-radius: 2px;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-color);
+    margin: 24px auto 0;
+    border-radius: 1px;
 }
 
 /* Section subtitle styling - Creator Army clean style */
 .section-subtitle {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    display: inline-block;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--accent-color);
     margin-bottom: 20px;
-    background: rgba(220, 28, 46, 0.08);
-    padding: 12px 26px;
-    border-radius: 50px;
     font-family: 'General Sans', 'Inter', sans-serif;
-    border: 1px solid rgba(220, 28, 46, 0.15);
     position: relative;
+    padding-left: 16px;
 }
 
-/* Accent dot */
+/* Accent bar */
 .section-subtitle::before {
     content: '';
-    width: 5px;
-    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
     background-color: var(--accent-color);
     border-radius: 50%;
-    flex-shrink: 0;
 }
 
 .section-header h2 {
@@ -762,6 +775,14 @@ section::before {
     background-color: var(--bg-darker);
     background-image: 
         linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+}
+
+.properties-section .section-header h2 {
+    color: var(--text-white);
+}
+
+.properties-section .section-header p {
+    color: var(--text-lightest);
 }
 
 .property-filters {
