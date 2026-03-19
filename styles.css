@@ -1,6 +1,40 @@
 /* ============================================
    Team Williams RE/MAX Regency - Stylesheet
+   Creator Army Inspired Design Refinements
    ============================================ */
+
+/* Font Imports - Creator Army inspired typography */
+@font-face {
+    font-family: "General Sans";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/GeneralSans.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "General Sans";
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/GeneralSans-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "General Sans";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/GeneralSans-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Zuume Edge";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/ZuumeEdge-SemiBold.ttf") format("truetype");
+}
 
 /* CSS Variables - Creator Army Inspired Design Refinements */
 :root {
@@ -40,11 +74,13 @@
     --border-radius-sm: 8px;
     --border-radius-lg: 16px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Refined spacing */
+    --section-padding: 140px;
 }
 
 /* Body and Base */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'General Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-dark);
     line-height: 1.7;
     background-color: var(--bg-white);
@@ -55,11 +91,50 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 600;
-    line-height: 1.25;
+/* Creator Army refined grain texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Heading Size Standardization - Creator Army refined */
+.heading-1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.heading-2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+.heading-3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+.heading-4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 a {
@@ -85,10 +160,10 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
     font-weight: 600;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
 }
 
 a {
@@ -128,7 +203,7 @@ ul {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 /* Creator Army inspired shimmer effect */
@@ -139,7 +214,7 @@ ul {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
     transition: all 0.5s;
 }
 
@@ -154,15 +229,18 @@ ul {
     box-shadow: var(--shadow-md);
 }
 
+/* Creator Army refined button hover */
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--primary-dark) 0%, #9e1123 100%);
     border-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(227, 25, 55, 0.35);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 35px rgba(227, 25, 55, 0.35),
+        0 0 0 0 var(--primary-color);
 }
 
 .btn-primary:active {
-    transform: translateY(0);
+    transform: translateY(-1px) scale(1.01);
 }
 
 /* Creator Army style outline button */
@@ -646,7 +724,7 @@ section {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Inter', sans-serif;
+    font-family: 'General Sans', 'Inter', sans-serif;
     color: var(--text-medium);
 }
 
@@ -666,23 +744,15 @@ section {
     margin-bottom: 45px;
 }
 
-.property-card {
-    background-color: var(--bg-white);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    position: relative;
-}
-
 /* Property Card refinements - Creator Army style */
 .property-card {
     background-color: var(--bg-white);
-    border-radius: var(--border-radius-lg);
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 0, 0, 0.04);
     position: relative;
 }
@@ -692,18 +762,17 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: var(--border-radius-lg);
+    border-radius: 24px;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.5s ease;
     box-shadow: 0 0 0 2px var(--brand-green);
     pointer-events: none;
 }
 
 .property-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.1), 
-        0 8px 16px rgba(0, 0, 0, 0.06),
+        0 30px 60px -15px rgba(0, 0, 0, 0.12),
         0 0 40px rgba(206, 255, 0, 0.15);
     border-color: transparent;
 }
@@ -722,24 +791,45 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .property-card:hover .property-image img {
     transform: scale(1.08);
 }
 
+/* Creator Army style image overlay on hover */
+.property-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.property-card:hover .property-image::after {
+    opacity: 1;
+}
+
 .property-badge {
     position: absolute;
     top: 16px;
     left: 16px;
-    padding: 7px 16px;
+    padding: 8px 18px;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-radius: 4px;
+    border-radius: 6px;
     color: var(--text-white);
+    font-family: 'General Sans', 'Inter', sans-serif;
+    z-index: 2;
 }
 
 .property-badge.sale {
@@ -763,6 +853,7 @@ section {
     margin-bottom: 10px;
     color: var(--text-dark);
     font-weight: 600;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .property-address {
@@ -772,6 +863,7 @@ section {
     display: flex;
     align-items: center;
     gap: 6px;
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .property-features {
@@ -789,6 +881,7 @@ section {
     gap: 6px;
     font-size: 14px;
     color: var(--text-light);
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .property-features i {
@@ -800,7 +893,7 @@ section {
     font-weight: 700;
     color: var(--secondary-color);
     margin-bottom: 16px;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .properties-cta {
@@ -903,23 +996,33 @@ section {
     letter-spacing: 1px;
 }
 
-/* Video Section */
+/* Video Section - Creator Army inspired modern design */
 .video-section {
     background-color: var(--bg-white);
     position: relative;
     overflow: hidden;
+    padding: 100px 0;
 }
 
 .video-section::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -20%;
-    width: 60%;
-    height: 200%;
-    background: linear-gradient(135deg, var(--primary-light) 0%, transparent 60%);
-    opacity: 0.5;
+    top: -30%;
+    right: -10%;
+    width: 50%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(206, 255, 0, 0.08) 0%, transparent 70%);
     pointer-events: none;
+}
+
+.video-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(206, 255, 0, 0.3), transparent);
 }
 
 .video-section .container {
@@ -927,12 +1030,24 @@ section {
     z-index: 1;
 }
 
+.video-section .section-header {
+    margin-bottom: 50px;
+}
+
+.video-section .section-header p {
+    font-size: 17px;
+    color: var(--text-medium);
+}
+
 .video-wrapper {
-    max-width: 950px;
-    margin: 0 auto 45px;
-    border-radius: var(--border-radius-lg);
+    max-width: 900px;
+    margin: 0 auto 40px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow-2xl), 0 0 0 1px rgba(0,0,0,0.05);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0,0,0,0.05),
+        0 0 80px rgba(206, 255, 0, 0.1);
     position: relative;
     background: var(--secondary-color);
 }
@@ -941,18 +1056,47 @@ section {
     width: 100%;
     display: block;
     aspect-ratio: 16/9;
+    border-radius: 20px;
 }
 
-.video-wrapper::after {
+.video-wrapper::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     pointer-events: none;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
-    border-radius: var(--border-radius-lg);
+    z-index: 2;
+}
+
+/* Video play button overlay styling */
+.video-wrapper .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper .play-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--brand-green);
+}
+
+.video-wrapper .play-overlay i {
+    font-size: 28px;
+    color: var(--secondary-color);
+    margin-left: 4px;
 }
 
 .video-cta {
@@ -967,10 +1111,11 @@ section {
     font-weight: 500;
 }
 
-/* Team Section */
+/* Team Section - Creator Army refined */
 .team-section {
     background-color: var(--bg-white);
     position: relative;
+    padding: 100px 0 80px;
 }
 
 .team-section::before {
@@ -979,9 +1124,19 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: 300px;
+    height: 280px;
     background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
     pointer-events: none;
+}
+
+.team-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(227, 25, 55, 0.2), transparent);
 }
 
 .team-section .container {
@@ -989,38 +1144,48 @@ section {
     z-index: 1;
 }
 
+.team-section .section-header {
+    margin-bottom: 50px;
+}
+
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1050px;
+    gap: 28px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
+/* Creator Army style team cards - cleaner, image-forward design */
 .team-card {
     background-color: var(--bg-white);
-    border-radius: var(--border-radius-lg);
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
-    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 0, 0, 0.04);
     position: relative;
 }
 
+/* Creator Army style: subtle glow on hover */
 .team-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: var(--border-radius-lg);
+    border-radius: 24px;
     opacity: 0;
-    transition: opacity 0.45s ease;
+    transition: opacity 0.5s ease;
     box-shadow: 0 0 0 2px var(--brand-green);
     pointer-events: none;
 }
 
 .team-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 
+        0 30px 60px -15px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(206, 255, 0, 0.2);
 }
 
 .team-card:hover::after {
@@ -1029,20 +1194,40 @@ section {
 
 .team-card.lead {
     grid-column: span 3;
-    max-width: 420px;
+    max-width: 400px;
     margin: 0 auto;
     width: 100%;
 }
 
 .team-image {
-    height: 280px;
+    height: 320px;
     overflow: hidden;
     background-color: #f1f5f9;
     position: relative;
 }
 
 .team-card.lead .team-image {
-    height: 320px;
+    height: 380px;
+}
+
+/* Creator Army style gradient overlay on image */
+.team-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.team-card:hover .team-image::before {
+    opacity: 1;
 }
 
 .team-image::after {
@@ -1051,7 +1236,7 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
     background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 100%);
     pointer-events: none;
 }
@@ -1061,15 +1246,35 @@ section {
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-card:hover .team-image img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .team-info {
-    padding: 28px 30px;
+    padding: 24px 28px 28px;
+    position: relative;
+}
+
+/* Creator Army style colored accent bar */
+.team-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 28px;
+    right: 28px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--brand-green));
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-info::before {
+    transform: scaleX(1);
 }
 
 .team-info h3 {
@@ -1077,6 +1282,7 @@ section {
     margin-bottom: 6px;
     color: var(--text-dark);
     font-weight: 600;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .team-title {
@@ -1091,6 +1297,7 @@ section {
     padding: 6px 12px;
     border-radius: 4px;
     border: 1px solid rgba(227, 25, 55, 0.1);
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .team-bio {
@@ -1098,6 +1305,7 @@ section {
     color: var(--text-medium);
     line-height: 1.75;
     margin-bottom: 20px;
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .team-contact {
@@ -1116,6 +1324,7 @@ section {
     color: var(--text-light);
     transition: all 0.3s ease;
     font-weight: 500;
+    font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .team-contact a:hover {
@@ -1140,9 +1349,28 @@ section {
     color: var(--primary-color);
 }
 
-/* Testimonials Section */
+/* Testimonials Section - Creator Army refined */
 .testimonials-section {
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -5%;
+    width: 40%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(227, 25, 55, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.testimonials-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .testimonials-grid {
