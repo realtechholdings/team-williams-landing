@@ -495,7 +495,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('https://images.unsplash.com/photo-1505521216430-8b73b2067df0?w=1920&q=80') center top / cover no-repeat;
+    /* Background set via inline style in HTML */
+    background-color: #0f172a;
     padding: 120px 20px 80px;
     text-align: center;
     color: var(--text-white);
