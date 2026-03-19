@@ -36,55 +36,60 @@
     src: url("https://cdn.jsdelivr.net/gh/creatorarmy/creatorarmy-web@latest/public/fonts/ZuumeEdge-SemiBold.ttf") format("truetype");
 }
 
-/* CSS Variables - Updated Color Palette */
+/* CSS Variables - Creator Army Refined Palette */
 :root {
     /* Brand Colors - User Specified */
     --brand-primary: #1a3668;    /* Dark Blue */
-    --brand-secondary: #660000;   /* Dark Red */
-    --accent-color: #dc1c2e;     /* Red accent */
+    --brand-secondary: #0f172a;  /* Deep Navy */
+    --accent-color: #dc1c2e;      /* Red accent */
+    --accent-gold: #c9a227;      /* Gold accent */
     
     /* Derived Colors */
     --primary-color: var(--accent-color);
     --primary-dark: #b8142b;
     --primary-light: rgba(220, 28, 46, 0.08);
     
-    /* Background Colors - Creator Army dark theme */
-    --bg-dark: #18181b;
-    --bg-darker: #0f0f10;
-    --bg-light: #27272a;
+    /* Background Colors - Luxe dark theme */
+    --bg-dark: #0f172a;
+    --bg-darker: #0a0e17;
+    --bg-light: #1e293b;
     --bg-white: #ffffff;
-    --bg-cream: #faf9f7;
+    --bg-cream: #f8f7f4;
     
     /* Text Colors */
-    --text-dark: #ffffff;
-    --text-medium: #d4d4d8;
-    --text-light: #a1a1aa;
-    --text-lightest: #71717a;
+    --text-dark: #0f172a;
+    --text-medium: #475569;
+    --text-light: #64748b;
+    --text-lightest: #94a3b8;
     --text-white: #ffffff;
     
-    /* Brand Green replaced with user colors */
+    /* Brand Colors */
     --brand-blue: #1a3668;
     --brand-red: #660000;
     
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --shadow-accent: 0 0 20px rgba(220, 28, 46, 0.4);
-    --shadow-blue: 0 0 20px rgba(26, 54, 104, 0.4);
+    /* Shadows - Creator Army refined */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.15);
+    --shadow-2xl: 0 32px 80px rgba(0, 0, 0, 0.2);
+    --shadow-accent: 0 8px 30px rgba(220, 28, 46, 0.25);
+    --shadow-blue: 0 8px 30px rgba(26, 54, 104, 0.25);
+    --shadow-gold: 0 8px 30px rgba(201, 162, 39, 0.25);
     
     /* Border Radius */
-    --border-radius: 12px;
-    --border-radius-sm: 8px;
-    --border-radius-lg: 16px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
     
     /* Transitions */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Section Padding */
-    --section-padding: 100px;
+    --section-padding: 120px;
 }
 
 /* Body and Base */
@@ -93,14 +98,11 @@ body {
     color: var(--text-dark);
     line-height: 1.7;
     background-color: var(--bg-white);
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(227, 25, 55, 0.02) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(201, 162, 39, 0.02) 0%, transparent 50%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Creator Army refined grain texture overlay */
+/* Dark theme grain texture overlay */
 body::before {
     content: '';
     position: fixed;
@@ -110,7 +112,7 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.03;
+    opacity: 0.025;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -264,7 +266,7 @@ ul {
 
 .btn-outline:hover {
     background-color: var(--brand-green);
-    color: var(--text-dark);
+    color: #0f0f10;
     border-color: var(--brand-green);
     transform: translateY(-3px);
     box-shadow: var(--shadow-green), 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -662,9 +664,10 @@ ul {
 section {
     padding: var(--section-padding) 0;
     position: relative;
+    background-color: var(--bg-dark);
 }
 
-/* Creator Army style: section transitions with subtle diagonal lines */
+/* Section subtle line accent */
 section::before {
     content: '';
     position: absolute;
@@ -672,7 +675,7 @@ section::before {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(206, 255, 0, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(220, 28, 46, 0.3), transparent);
 }
 
 .section-header {
@@ -686,12 +689,12 @@ section::before {
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--brand-green));
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
     margin: 28px auto 0;
     border-radius: 3px;
 }
 
-/* Creator Army style: subtle emphasis on subtitle */
+/* Section subtitle styling */
 .section-subtitle {
     display: inline-flex;
     align-items: center;
@@ -700,22 +703,22 @@ section::before {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: 16px;
-    background: linear-gradient(135deg, rgba(227, 25, 55, 0.1) 0%, rgba(227, 25, 55, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(220, 28, 46, 0.15) 0%, rgba(220, 28, 46, 0.05) 100%);
     padding: 10px 22px;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    border: 1px solid rgba(227, 25, 55, 0.12);
+    border: 1px solid rgba(220, 28, 46, 0.2);
     position: relative;
 }
 
-/* Creator Army accent dot */
+/* Accent dot */
 .section-subtitle::before {
     content: '';
     width: 6px;
     height: 6px;
-    background-color: var(--brand-green);
+    background-color: var(--brand-primary);
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -738,9 +741,9 @@ section::before {
 
 /* Properties Section */
 .properties-section {
-    background-color: var(--bg-white);
+    background-color: var(--bg-darker);
     background-image: 
-        linear-gradient(180deg, transparent 0%, var(--bg-light) 100%);
+        linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
 }
 
 .property-filters {
@@ -766,11 +769,11 @@ section::before {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
     color: var(--text-white);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.25);
+    box-shadow: 0 8px 25px rgba(26, 54, 104, 0.35);
 }
 
 .properties-grid {
@@ -780,20 +783,20 @@ section::before {
     margin-bottom: 45px;
 }
 
-/* Property Card refinements - Creator Army style */
+/* Property Card refinements - dark theme */
 .property-card {
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 
-        0 0 0 1px rgba(0, 0, 0, 0.04),
-        0 4px 20px rgba(0, 0, 0, 0.04);
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 4px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
 }
 
-/* Creator Army style: subtle glow on hover with refined shadow */
+/* Hover glow effect */
 .property-card::before {
     content: '';
     position: absolute;
@@ -801,15 +804,15 @@ section::before {
     border-radius: 24px;
     opacity: 0;
     transition: opacity 0.5s ease;
-    box-shadow: 0 0 0 2px var(--brand-green);
+    box-shadow: 0 0 0 2px var(--brand-primary);
     pointer-events: none;
 }
 
 .property-card:hover {
     transform: translateY(-12px);
     box-shadow: 
-        0 30px 60px -15px rgba(0, 0, 0, 0.12),
-        0 0 40px rgba(206, 255, 0, 0.15);
+        0 30px 60px -15px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(26, 54, 104, 0.2);
     border-color: transparent;
 }
 
@@ -894,7 +897,7 @@ section::before {
 
 .property-address {
     font-size: 14px;
-    color: var(--text-light);
+    color: var(--text-medium);
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -908,7 +911,7 @@ section::before {
     gap: 18px;
     margin-bottom: 16px;
     padding-bottom: 16px;
-    border-bottom: 1px solid #eaeef3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .property-features span {
@@ -916,18 +919,18 @@ section::before {
     align-items: center;
     gap: 6px;
     font-size: 14px;
-    color: var(--text-light);
+    color: var(--text-medium);
     font-family: 'General Sans', 'Inter', sans-serif;
 }
 
 .property-features i {
-    color: var(--primary-color);
+    color: var(--brand-primary);
 }
 
 .property-price {
     font-size: 26px;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--text-dark);
     margin-bottom: 16px;
     font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
@@ -1032,9 +1035,9 @@ section::before {
     letter-spacing: 1px;
 }
 
-/* Video Section - Creator Army inspired modern design */
+/* Video Section - Modern dark theme design */
 .video-section {
-    background-color: var(--bg-white);
+    background-color: var(--bg-dark);
     position: relative;
     overflow: hidden;
     padding: 100px 0;
@@ -1047,7 +1050,7 @@ section::before {
     right: -10%;
     width: 50%;
     height: 160%;
-    background: radial-gradient(circle, rgba(206, 255, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(26, 54, 104, 0.15) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -1058,7 +1061,7 @@ section::before {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(206, 255, 0, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(220, 28, 46, 0.3), transparent);
 }
 
 .video-section .container {
