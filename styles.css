@@ -1,6 +1,6 @@
 /* ============================================
    Team Williams RE/MAX Regency - Stylesheet
-   Creator Army Inspired Design Refinements v3
+   Creator Army Inspired Design Refinements v4
    ============================================ */
 
 /* Font Imports - Creator Army typography */
@@ -172,7 +172,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.025em;
@@ -248,11 +248,31 @@ ul {
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--primary-dark) 0%, #9e1123 100%);
     border-color: var(--primary-dark);
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
     box-shadow: 
-        0 15px 35px rgba(227, 25, 55, 0.35),
+        0 20px 40px rgba(227, 25, 55, 0.4),
         0 0 0 0 var(--primary-color),
-        0 0 30px rgba(227, 25, 55, 0.2);
+        0 0 40px rgba(227, 25, 55, 0.25);
+}
+
+/* Creator Army: Hero badge more refined */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 48px;
+    color: #ffffff;
+    font-family: 'General Sans', 'Inter', sans-serif;
+    position: relative;
+    padding: 16px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-primary:active {
@@ -475,7 +495,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('./assets/ben-andrea-together-latest.jpg') center top / cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1505521216430-8b73b2067df0?w=1920&q=80') center top / cover no-repeat;
     padding: 120px 20px 80px;
     text-align: center;
     color: var(--text-white);
@@ -568,7 +588,7 @@ ul {
     font-weight: 700;
     letter-spacing: -0.04em;
     line-height: 1.05;
-    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .partner-name {
@@ -679,16 +699,25 @@ ul {
     font-size: clamp(36px, 5vw, 52px);
     font-weight: 700;
     color: var(--accent-color);
-    font-family: 'Playfair Display', Georgia, serif;
-    letter-spacing: -0.02em;
+    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.03em;
+    position: relative;
+}
+
+.stat-number::after {
+    content: '+';
+    font-size: 0.5em;
+    margin-left: 4px;
+    opacity: 0.8;
 }
 
 .stat-label {
-    font-size: 13px;
-    opacity: 0.75;
+    font-size: 11px;
+    opacity: 0.85;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 500;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Section Styles */
@@ -754,16 +783,16 @@ section::before {
 
 .section-header h2 {
     font-size: clamp(42px, 6vw, 64px);
-    color: var(--text-dark);
+    color: #1a1a2e;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
     font-weight: 700;
-    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    font-family: 'Poppins', 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .section-header p {
     font-size: 18px;
-    color: var(--text-medium);
+    color: #4a5568;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.75;
@@ -772,17 +801,16 @@ section::before {
 
 /* Properties Section */
 .properties-section {
-    background-color: var(--bg-darker);
-    background-image: 
-        linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    background-color: var(--bg-white);
+    background-image: none;
 }
 
 .properties-section .section-header h2 {
-    color: var(--text-white);
+    color: var(--text-dark);
 }
 
 .properties-section .section-header p {
-    color: var(--text-lightest);
+    color: var(--text-medium);
 }
 
 .property-filters {
@@ -795,16 +823,16 @@ section::before {
 
 .filter-btn {
     padding: 14px 32px;
-    font-size: 13px;
-    font-weight: 600;
-    background-color: var(--bg-white);
-    border: 2px solid rgba(255, 255, 255, 0.08);
+    font-size: 12px;
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-family: 'General Sans', 'Inter', sans-serif;
     color: var(--text-lightest);
-    letter-spacing: 0.5px;
+    letter-spacing: 1.2px;
 }
 
 .filter-btn:hover,
@@ -813,7 +841,8 @@ section::before {
     border-color: var(--accent-color);
     color: var(--text-white);
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(220, 28, 46, 0.35);
+    box-shadow: 0 15px 35px rgba(220, 28, 46, 0.4);
+    letter-spacing: 1.5px;
 }
 
 .properties-grid {
@@ -823,18 +852,26 @@ section::before {
     margin-bottom: 45px;
 }
 
-/* Property Card refinements - Creator Army style - dark theme */
+/* Property Card refinements - Creator Army style - light theme */
 .property-card {
-    background-color: var(--bg-light);
+    background-color: var(--bg-white);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 4px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+        0 0 0 1px rgba(0, 0, 0, 0.08),
+        0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     position: relative;
 }
+
+/* Creator Army: Staggered reveal animation */
+.property-card:nth-child(1) { animation-delay: 0.1s; }
+.property-card:nth-child(2) { animation-delay: 0.2s; }
+.property-card:nth-child(3) { animation-delay: 0.3s; }
+.property-card:nth-child(4) { animation-delay: 0.4s; }
+.property-card:nth-child(5) { animation-delay: 0.5s; }
+.property-card:nth-child(6) { animation-delay: 0.6s; }
 
 /* Hover glow effect */
 .property-card::before {
@@ -931,14 +968,14 @@ section::before {
 .property-details h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: var(--text-white);
+    color: var(--text-dark);
     font-weight: 600;
-    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    font-family: 'Poppins', 'Zuume Edge', 'Playfair Display', Georgia, serif;
 }
 
 .property-address {
     font-size: 14px;
-    color: var(--text-lightest);
+    color: var(--text-medium);
     margin-bottom: 18px;
     display: flex;
     align-items: center;
@@ -952,7 +989,7 @@ section::before {
     gap: 20px;
     margin-bottom: 18px;
     padding-bottom: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .property-features span {
@@ -960,7 +997,7 @@ section::before {
     align-items: center;
     gap: 6px;
     font-size: 14px;
-    color: var(--text-lightest);
+    color: var(--text-medium);
     font-family: 'General Sans', 'Inter', sans-serif;
 }
 
@@ -972,9 +1009,9 @@ section::before {
 .property-price {
     font-size: 28px;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--accent-color);
     margin-bottom: 16px;
-    font-family: 'Zuume Edge', 'Playfair Display', Georgia, serif;
+    font-family: 'Poppins', 'Zuume Edge', 'Playfair Display', Georgia, serif;
     letter-spacing: -0.02em;
 }
 
@@ -1138,6 +1175,22 @@ section::before {
     background: var(--secondary-color);
 }
 
+/* Creator Army: Video glow effect */
+.video-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(220, 28, 46, 0.3), transparent, rgba(220, 28, 46, 0.2));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.video-wrapper:hover::after {
+    opacity: 1;
+}
+
 .video-wrapper video {
     width: 100%;
     display: block;
@@ -1250,9 +1303,18 @@ section::before {
     box-shadow: 
         0 0 0 1px rgba(0, 0, 0, 0.04),
         0 4px 20px rgba(0, 0, 0, 0.04);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid rgba(0, 0, 0, 0.04);
     position: relative;
+}
+
+/* Creator Army: Smooth image zoom on hover */
+.team-card .team-image img {
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.12);
 }
 
 /* Creator Army style: subtle glow on hover */
@@ -1454,6 +1516,31 @@ section::before {
     pointer-events: none;
 }
 
+/* Creator Army: Testimonial card refined */
+.testimonial-card {
+    background-color: var(--bg-white);
+    padding: 35px;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Creator Army: Quote icon decoration */
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 120px;
+    font-family: Georgia, serif;
+    color: var(--accent-color);
+    opacity: 0.06;
+    line-height: 1;
+    pointer-events: none;
+}
+
 .testimonials-section .container {
     position: relative;
     z-index: 1;
@@ -1466,11 +1553,11 @@ section::before {
 }
 
 .testimonial-card {
-    background-color: var(--bg-light);
+    background-color: #ffffff;
     padding: 35px;
     border-radius: var(--border-radius);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     position: relative;
     overflow: hidden;
 }
@@ -1489,9 +1576,8 @@ section::before {
 }
 
 .testimonial-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
-    border-color: rgba(220, 28, 46, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
 }
 
 .testimonial-card:hover::before {
