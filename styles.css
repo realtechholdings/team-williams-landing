@@ -123,6 +123,8 @@ ul {
     font-weight: 700;
     color: var(--text-white);
     letter-spacing: -0.5px;
+    background: none;
+    text-transform: uppercase;
 }
 
 .team-name {
@@ -131,6 +133,7 @@ ul {
     color: var(--text-white);
     padding-left: 12px;
     border-left: 2px solid rgba(255,255,255,0.3);
+    font-style: italic;
 }
 
 .nav {
@@ -173,7 +176,7 @@ ul {
 
 /* Buttons - RE/MAX Branded */
 .btn-primary {
-    background: linear-gradient(135deg, var(--remax-red) 0%, #b8142b 100%);
+    background: var(--remax-red);
     color: var(--text-white);
     border: none;
 }
@@ -973,7 +976,7 @@ section {
 
 /* Footer - RE/MAX Branded */
 .footer {
-    background: linear-gradient(135deg, var(--remax-blue) 0%, #002a6e 100%);
+    background: var(--remax-blue);
     padding: 60px 0 30px;
     border-top: 4px solid var(--remax-red);
 }
@@ -993,7 +996,8 @@ section {
 }
 
 .footer-logo .remax-logo {
-    color: var(--accent-color);
+    color: var(--text-white);
+    background: none;
 }
 
 .footer-logo .team-name {

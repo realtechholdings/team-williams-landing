@@ -230,6 +230,24 @@ function initializePropertyFilters() {
     });
 }
 
+// Function to animate stats counters
+function initializeStatsCounters() {
+    const statElements = document.querySelectorAll('.stat-number');
+    statElements.forEach((stat) => {
+        const endValue = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+        let startValue = 0;
+        let increment = Math.ceil(endValue / 50);
+        let timer = setInterval(() => {
+            startValue += increment;
+            if (startValue >= endValue) {
+                startValue = endValue;
+                clearInterval(timer);
+            }
+            stat.textContent = stat.textContent.includes('$') ? `$${startValue.toLocaleString()}+` : `${startValue.toLocaleString()}+`;
+        }, 50);
+    });
+}
+
 // ============================================
 // Main Initialization
 // ============================================
@@ -303,6 +321,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Initialize stats counters
+    initializeStatsCounters();
 
     // Contact Form Submission
     const contactForm = document.getElementById('contactForm');
