@@ -123,6 +123,7 @@ ul {
     font-weight: 700;
     color: var(--text-white);
     letter-spacing: -0.5px;
+    background: none;
 }
 
 .team-name {
