@@ -235,6 +235,8 @@ function initializePropertyFilters() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Animate stats counters
+    animateStats();
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
@@ -454,4 +456,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log('Team Williams RE/MAX Regency - Website Loaded');
+
+    // Function to animate stats
+    function animateStats() {
+        const stats = document.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+            const endValue = parseInt(stat.textContent.replace('+', '').replace(', '').replace('M', '000000'));
+            let startValue = 0;
+            const duration = 2000; // 2 seconds
+            const stepTime = Math.abs(Math.floor(duration / (endValue - startValue)));
+            let timer = setInterval(function() {
+                startValue += 1;
+                if (startValue > endValue) startValue = endValue;
+                stat.textContent = startValue.toString().replace('000000', 'M+');
+                if (startValue >= endValue) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        });
+    }
 });
