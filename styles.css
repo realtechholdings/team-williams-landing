@@ -123,6 +123,7 @@ ul {
     font-weight: 700;
     color: var(--text-white);
     letter-spacing: -0.5px;
+    background: none;
 }
 
 .team-name {
@@ -993,7 +994,8 @@ section {
 }
 
 .footer-logo .remax-logo {
-    color: var(--accent-color);
+    color: var(--text-white);
+    background: none;
 }
 
 .footer-logo .team-name {
