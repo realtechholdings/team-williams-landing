@@ -6,13 +6,23 @@
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-/* CSS Variables - Dark Theme */
+/* CSS Variables - RE/MAX Official Brand Theme */
 :root {
-    /* Brand Colors */
-    --brand-primary: #1a3668;
-    --brand-secondary: #660000;
-    --accent-color: #dc1c2e;
-    --accent-gold: #c9a227;
+    /* RE/MAX Official Brand Colors */
+    --remax-red: #DC1C2E;
+    --remax-blue: #003DA5;
+    --remax-gold: #c9a227;
+    
+    /* Ocean Theme Colors */
+    --ocean-primary: #0077B6;
+    --ocean-secondary: #0096C7;
+    --ocean-accent: #48CAE4;
+    
+    /* Brand Colors - Adjusted for Ocean Theme */
+    --brand-primary: var(--ocean-primary);
+    --brand-secondary: var(--ocean-secondary);
+    --accent-color: var(--ocean-secondary);
+    --accent-gold: var(--ocean-accent);
     
     /* Background Colors - All Dark */
     --bg-dark: #0f172a;
@@ -78,16 +88,17 @@ ul {
     padding: 0 24px;
 }
 
-/* Header - Fixed dark with white text */
+/* Header - RE/MAX Blue with white text */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: var(--bg-darker);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, var(--remax-blue) 0%, #002a6e 100%);
+    border-bottom: 3px solid var(--remax-red);
     padding: 16px 0;
+    box-shadow: 0 4px 20px rgba(0, 61, 165, 0.3);
 }
 
 .header-content {
@@ -102,16 +113,27 @@ ul {
     gap: 12px;
 }
 
+.remax-globe {
+    font-size: 28px;
+    color: var(--remax-red);
+}
+
 .remax-logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    color: var(--accent-color);
+    background: linear-gradient(135deg, #fff 0%, var(--remax-red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
 }
 
 .team-name {
     font-size: 18px;
     font-weight: 600;
     color: var(--text-white);
+    padding-left: 12px;
+    border-left: 2px solid rgba(255,255,255,0.3);
 }
 
 .nav {
@@ -152,17 +174,17 @@ ul {
     border: 2px solid transparent;
 }
 
+/* Buttons - RE/MAX Branded */
 .btn-primary {
-    background: var(--accent-color);
+    background: linear-gradient(135deg, var(--remax-red) 0%, #b8142b 100%);
     color: var(--text-white);
-    border-color: var(--accent-color);
+    border: none;
 }
 
 .btn-primary:hover {
-    background: #b8142b;
-    border-color: #b8142b;
+    background: linear-gradient(135deg, #b8142b 0%, #9a0f23 100%);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-accent);
+    box-shadow: 0 8px 25px rgba(220, 28, 46, 0.4);
 }
 
 .btn-outline {
@@ -190,15 +212,14 @@ ul {
     width: 100%;
 }
 
-/* Hero Section - Dark with overlay */
+/* Hero Section - RE/MAX Branded */
 .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: var(--bg-dark);
-    background-image: url('./assets/gold-coast-header.jpg');
+    background: linear-gradient(135deg, var(--remax-blue) 0%, #0a1628 50%, var(--bg-darker) 100%);
     background-size: cover;
     background-position: right center;
     padding: 120px 20px 80px;
@@ -953,11 +974,11 @@ section {
     min-height: 120px;
 }
 
-/* Footer */
+/* Footer - RE/MAX Branded */
 .footer {
-    background-color: var(--bg-darker);
+    background: linear-gradient(135deg, var(--remax-blue) 0%, #002a6e 100%);
     padding: 60px 0 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 4px solid var(--remax-red);
 }
 
 .footer-grid {
