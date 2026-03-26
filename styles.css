@@ -121,10 +121,7 @@ ul {
 .remax-logo {
     font-size: 24px;
     font-weight: 700;
-    background: linear-gradient(135deg, #fff 0%, var(--remax-red) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-white);
     letter-spacing: -0.5px;
 }
 

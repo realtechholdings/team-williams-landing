@@ -230,6 +230,25 @@ function initializePropertyFilters() {
     });
 }
 
+// Initialize moving counters for stats
+function initializeStatsCounters() {
+    const stats = document.querySelectorAll('.stat-number');
+    stats.forEach(stat => {
+        const endValue = parseInt(stat.textContent.replace('$', '').replace('+', '').replace('M', '000000'));
+        let startValue = 0;
+        const duration = 2000; // 2 seconds
+        const stepTime = Math.abs(Math.floor(duration / endValue));
+        
+        const timer = setInterval(() => {
+            startValue += 1;
+            stat.textContent = startValue > endValue ? endValue.toLocaleString() + (stat.textContent.includes('$') ? '' : stat.textContent.includes('M') ? 'M+' : '+') : startValue.toLocaleString();
+            if (startValue >= endValue) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    });
+}
+
 // ============================================
 // Main Initialization
 // ============================================
@@ -284,6 +303,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Auto-refresh listings every 5 minutes
     setInterval(loadListings, CONFIG.listingsRefreshInterval);
+
+    // Initialize moving counters for stats
+    initializeStatsCounters();
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
