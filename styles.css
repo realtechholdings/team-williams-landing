@@ -95,7 +95,7 @@ ul {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(135deg, var(--remax-blue) 0%, #002a6e 100%);
+    background: var(--remax-blue);
     border-bottom: 3px solid var(--remax-red);
     padding: 16px 0;
     box-shadow: 0 4px 20px rgba(0, 61, 165, 0.3);
@@ -173,7 +173,7 @@ ul {
 
 /* Buttons - RE/MAX Branded */
 .btn-primary {
-    background: linear-gradient(135deg, var(--remax-red) 0%, #b8142b 100%);
+    background: var(--remax-red);
     color: var(--text-white);
     border: none;
 }
@@ -216,7 +216,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(135deg, var(--remax-blue) 0%, #0a1628 50%, var(--bg-darker) 100%);
+    background: var(--remax-blue);
     background-size: cover;
     background-position: right center;
     padding: 120px 20px 80px;
@@ -349,7 +349,7 @@ ul {
     display: block;
     font-size: clamp(36px, 5vw, 52px);
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--text-white);
     line-height: 1;
 }
 
@@ -973,7 +973,7 @@ section {
 
 /* Footer - RE/MAX Branded */
 .footer {
-    background: linear-gradient(135deg, var(--remax-blue) 0%, #002a6e 100%);
+    background: var(--remax-blue);
     padding: 60px 0 30px;
     border-top: 4px solid var(--remax-red);
 }
