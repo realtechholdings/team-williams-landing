@@ -95,7 +95,7 @@ ul {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(135deg, var(--remax-blue) 0%, #002a6e 100%);
+    background: var(--remax-blue);
     border-bottom: 3px solid var(--remax-red);
     padding: 16px 0;
     box-shadow: 0 4px 20px rgba(0, 61, 165, 0.3);
@@ -216,7 +216,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(135deg, var(--remax-blue) 0%, #0a1628 50%, var(--bg-darker) 100%);
+    background: var(--remax-blue);
     background-size: cover;
     background-position: right center;
     padding: 120px 20px 80px;
