@@ -124,6 +124,7 @@ ul {
     color: var(--text-white);
     letter-spacing: -0.5px;
     background: none;
+    text-transform: uppercase;
 }
 
 .team-name {
@@ -132,6 +133,7 @@ ul {
     color: var(--text-white);
     padding-left: 12px;
     border-left: 2px solid rgba(255,255,255,0.3);
+    font-style: italic;
 }
 
 .nav {
