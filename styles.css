@@ -11,7 +11,7 @@
     /* RE/MAX Official Brand Colors */
     --remax-red: #DC1C2E;
     --remax-blue: #003DA5;
-    --remax-gold: #c9a227;
+    --remax-gold: #003DA5;
     
     /* Ocean Theme Colors */
     --ocean-primary: #0077B6;
@@ -22,7 +22,7 @@
     --brand-primary: var(--ocean-primary);
     --brand-secondary: var(--ocean-secondary);
     --accent-color: var(--ocean-secondary);
-    --accent-gold: var(--ocean-accent);
+    --accent-gold: #005A9E;
     
     /* Background Colors - All Dark */
     --bg-dark: #0f172a;
