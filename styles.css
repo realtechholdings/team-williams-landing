@@ -884,13 +884,6 @@ section {
     gap: 14px;
 }
 
-.testimonial-author img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 .testimonial-author h4 {
     font-size: 15px;
     color: var(--text-white);
