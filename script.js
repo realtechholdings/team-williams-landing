@@ -324,34 +324,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize stats counters (already called at the start)
     
-    // Contact Form Submission
+    // Contact Form Submission via Formspree
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
-            // Simple validation
-            if (!data.name || !data.email || !data.message) {
-                alert('Please fill in all required fields.');
-                return;
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you! Your message has been sent. We will contact you shortly.');
+                    this.reset();
+                } else {
+                    alert('There was a problem sending your message. Please try again or call us directly.');
+                }
+            } catch (error) {
+                alert('There was a problem sending your message. Please try again or call us directly.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
             }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // Show success message (in production, would send to backend)
-            alert(`Thank you, ${data.name}! Your message has been received. We will contact you at ${data.email} shortly.`);
-            
-            // Reset form
-            this.reset();
         });
     }
 
