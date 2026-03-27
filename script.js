@@ -253,8 +253,8 @@ function initializeStatsCounters() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Animate stats counters
-    animateStats();
+    // Initialize stats counters
+    initializeStatsCounters();
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
@@ -322,9 +322,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize stats counters
-    initializeStatsCounters();
-
+    // Initialize stats counters (already called at the start)
+    
     // Contact Form Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -455,45 +454,86 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Testimonial slider (simple auto-scroll)
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    let currentTestimonial = 0;
+    // Testimonials Carousel
+    const carousel = document.querySelector('.testimonials-carousel');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const dots = document.querySelectorAll('.dot');
     
-    function nextTestimonial() {
-        if (testimonialCards.length > 1) {
-            testimonialCards[currentTestimonial].style.opacity = '0.5';
-            currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-            testimonialCards[currentTestimonial].style.opacity = '1';
+    if (carousel && prevBtn && nextBtn) {
+        // Get card width dynamically (handles mobile vs desktop)
+        const getCardWidth = () => {
+            const card = carousel.querySelector('.testimonial-card');
+            if (card) {
+                const style = window.getComputedStyle(carousel);
+                const gap = parseInt(style.gap) || 30;
+                return card.offsetWidth + gap;
+            }
+            return 380; // default: 350 + 30
+        };
+        
+        let currentIndex = 0;
+        
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
         }
-    }
-
-    // Only enable auto-scroll on mobile
-    if (window.innerWidth < 768 && testimonialCards.length > 1) {
-        testimonialCards.forEach((card, index) => {
-            if (index !== 0) card.style.opacity = '0.5';
+        
+        function scrollToCard(index) {
+            const cardWidth = getCardWidth();
+            carousel.scrollTo({
+                left: index * cardWidth,
+                behavior: 'smooth'
+            });
+            currentIndex = index;
+            updateDots();
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                scrollToCard(currentIndex - 1);
+            }
         });
         
-        setInterval(nextTestimonial, 5000);
+        nextBtn.addEventListener('click', () => {
+            const maxIndex = carousel.children.length - 1;
+            if (currentIndex < maxIndex) {
+                scrollToCard(currentIndex + 1);
+            }
+        });
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                scrollToCard(index);
+            });
+        });
+        
+        // Update current index on scroll
+        carousel.addEventListener('scroll', () => {
+            const cardWidth = getCardWidth();
+            const newIndex = Math.round(carousel.scrollLeft / cardWidth);
+            if (newIndex !== currentIndex && newIndex >= 0 && newIndex < carousel.children.length) {
+                currentIndex = newIndex;
+                updateDots();
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            scrollToCard(currentIndex);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                scrollToCard(currentIndex - 1);
+            } else if (e.key === 'ArrowRight' && currentIndex < carousel.children.length - 1) {
+                scrollToCard(currentIndex + 1);
+            }
+        });
     }
 
     console.log('Team Williams RE/MAX Regency - Website Loaded');
-
-    // Function to animate stats
-    function animateStats() {
-        const stats = document.querySelectorAll('.stat-number');
-        stats.forEach(stat => {
-            const endValue = parseInt(stat.textContent.replace('+', '').replace(', '').replace('M', '000000'));
-            let startValue = 0;
-            const duration = 2000; // 2 seconds
-            const stepTime = Math.abs(Math.floor(duration / (endValue - startValue)));
-            let timer = setInterval(function() {
-                startValue += 1;
-                if (startValue > endValue) startValue = endValue;
-                stat.textContent = startValue.toString().replace('000000', 'M+');
-                if (startValue >= endValue) {
-                    clearInterval(timer);
-                }
-            }, stepTime);
-        });
-    }
 });
