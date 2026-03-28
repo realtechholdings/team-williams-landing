@@ -352,7 +352,8 @@ ul {
     width: 100%;
     position: relative;
     z-index: 10;
-    align-self: flex-end;
+    justify-content: center;
+    text-align: center;
     padding-bottom: 20px;
 }
 
