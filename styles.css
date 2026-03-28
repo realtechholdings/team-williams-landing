@@ -217,12 +217,13 @@ ul {
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: stretch;
     background: var(--remax-blue);
     background-size: cover;
     background-position: right center;
-    padding: 120px 20px 80px;
+    padding: 120px 20px 60px;
     color: var(--text-white);
 }
 
@@ -243,6 +244,7 @@ ul {
     position: relative;
     z-index: 10;
     max-width: 600px;
+    width: 100%;
 }
 
 .hero-badge {
@@ -346,13 +348,19 @@ ul {
     flex-wrap: wrap;
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    align-self: flex-end;
+    padding-bottom: 20px;
 }
 
 .stat-number {
     display: block;
     font-size: clamp(36px, 5vw, 52px);
     font-weight: 700;
-    color: var(--text-white);
+    color: #ffffff;
     line-height: 1;
 }
 
